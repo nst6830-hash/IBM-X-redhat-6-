@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style></style>
+</head>
+<body>
+    <script>
+        //문자열 출력: 작은따옴표 or 큰따옴표
+        document.write("자바스크립트 공부!!"+"<br>");
+        //주석 : 실행 안되는 코드들(보통 코드에 대한 설명, 쓸데없는 코드들 주석으로 표시한다.)
+        //document.writeln("환영해요~");  입력한 값에 \n추가하여 입력해줌
+        document.write("2.5"); //문자열로 인식
+        document.write("hi");
+    </script>
+    
+</body>
+</html>
+
+//문자열 출력 및 따옴표 및 쌍따옴표 사용법
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <script>
+        document.write(100); //숫자 데이터는 따옴표로 묶으면 안된다.
+        document.write('100'); //문자열 데이터이다(따옴표 넣었기 때문)
+
+        //문자열 : 쌍 따옴표 또는 외 따옴표로 작성
+        document.write('안녕');
+        document.write('<br>');  //태그 - 문자열로 인식 가능
+        document.write("자바스크립트 공부하네");
+        document.write('<br>');
+
+        //불(boolean) : 참과 거짓으로 표현한 자료형
+        document.write(5>3); //결과값이 참
+        document.write('<br>'); 
+
+        document.write(4<2);
+        document.write('<br>'); 
+
+        document.write('true'); //true,false는 예약어이기 때문에 따옴표 없이 사용해야 한다!
+        document.write('<br>');
+
+        document.write(true); //예약어로 쓰려면 이렇게 따옴표 없어야함
+        document.write('<br>');
+    </script>
+</body>
+</html>
+​
+//숫자 데이터에 따옴표 사용X 유의하기 
+//사용할 경우 문자열로 인식
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <script>
+        //f12 키보드 -> console창에서 확인
+        console.log(1+2);
+        console.log(3-4);
+        console.log(3*4);
+        console.log(10/2);
+
+        //나머지
+        console.log(10%3); //10을 3으로 나눴을때의 나머지
+        
+        //숫자와 문자를 사칙연산하면 어떻게 되는지?
+        console.log(5-'3'); //문자열 -,*,/ 가능 2
+        console.log(5*'3'); //15
+        console.log(5/'3'); //1.6666....
+
+        console.log(5+'3'); // + 인 경우 문자를 더한다(나열됨)
+
+        console.log('내 시력은 ' + 1.2 +" 이다");
+        //문자열과 숫자(실수, 정수) 사이에 +연산을 쓰게 되면 나열연산자가 된다.
+
+        console.log(11>2);
+        console.log(11<2);
+        console.log(3<=2);
+        console.log(3>=2);
+        console.log(3==3); // == 같다(equal)
+        console.log(3!=3); // != 같지않다(not) !는 부정연산자
+    </script>
+</body>
+</html>
+
+//console.log를 이용해 f12로 콘솔창으로 확인가능함을 배움
+//또 따옴표로 숫자열이 문자열로 변환되었을때에는 +를 제외한 연산자 사용가능
+//문자열로 변환된 이후에 + 사용시 문자의 나열로 진행됨 (수의 합이 아님)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <script>
+        console.log(5=='5'); //항등 연산자 equal
+        console.log(5==='5'); //데이터유형까지 일치해야함
+
+        //typeof : 데이터타입 확인하는 함수
+        console.log(typeof(5)); //number(숫자)
+        console.log(typeof('5')); //string(문자열)
+        console.log(typeof(5.5)); //number(숫자)
+        console.log(typeof(true)); //boolean(논리형)
+
+
+    </script>
+</body>
+</html>
+
+// typeof를 이용해 데이터의 타입을 확인할 수 있음
+// = 기호는 2개부터 사용하며 ===의 경우 데이터 유형이 일치해야함 Ex)  console.log(5==='5'); 이 경우 숫자열과 문자열 이기때문에 성립X
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <script>
+        // == 데이터 타입까지는 확인안함 (모양만 같으면됨 5=='5' => true) 등가비교연산자
+        // === 데이터 타입까지 확인함 (typeof로 뽑아서 데이터타입도 일치해야함 5==='5' => false)
+        // = 대입 연산자(오른쪽의 데이터를 왼쪽 변수에 대입)
+
+        let age=10; //10이라는 데이터를 age라는 변수에 대입한다!!!!
+
+        document.write('철수의 나이는 ' + age +' 살이다');
+        document.write("<br>");
+        document.write(age+30+ "살은 내 친언니 나이 이다");
+
+
+    </script>
+</body>
+</html>
+​
+// let var const 의 함수를 이용해 변수에 값을 대입할 수 있음.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <script>
+        //var let const
+        // var name='gildong'; //문자열 'gildong'을 name이라는 변수명에 대입함
+        // console.log(name);
+        // console.log(typeof(name));
+        // console.log(name=='gildong');
+
+        //var name='juli';
+        // console.log(name);
+
+        // let name='gildong'; //문자열 'gildong'을 name이라는 변수명에 대입함
+        // console.log(name);  
+
+        // let name='juli';
+        // console.log(name);
+
+        //  const name='gildong';  //변수 재선언 불가능 
+        //  name='juli'; //값변경도 불가능  => 에러발생!!!!!
+        //  document.write(name);
+
+        var name1='gildong';  //변수 재선언 가능
+        name1='juli'; //값변경 가능
+        document.write(name1);
+
+        let name2='gildong';  //변수 재선언 불가능 
+        name2='juli'; //값변경도 가능
+        document.write(name2);
+
+
+        //let var const 가 앞에 있으면 새로운 공간을 만들겠다.
+       
+    </script>
+</body>
+</html>
+​
+//변수에 값을 대입해 콘솔 및 브라우저를 통해 출력할수 있음
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <script>
+       let myPassword; //변수선언
+       let str1;
+
+       //let 1str; //숫자 먼저 나올수 없음
+
+       let _str;
+       let $str='aa';
+       console.log($str);
+
+       //let my passowrd; //공백 불가능
+       //카멜 표기법
+       let yourPassword; //두번째 단어의 첫글자를 대문자로 표현
+       let myId;
+
+
+
+
+    </script>
+</body>
+</html>
+
+//변수를 선언할 때에는 특수문자가 변수명 앞으로 갈 수 없음
+//또 띄어쓰기를 사용할 수 없으므로 카멜 표기법을 사용한다( 낙타의 등 혹 처럼 소문자와 대문자로 구분하여 사용한다.)
+
+!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <script>
+        //데이터 유형: 숫자, 문자열, 불(논리), 객체, undefined, (함수)
+        let num=20;
+        console.log(num);
+
+        let name='33';
+        let str='자바스크립트 재밌네';
+
+        let bool1 = 4>5;
+        console.log(bool1);
+
+        let bool2=true;
+        console.log(bool2);
+
+        //alert, prompt, confirm
+        let age = prompt('나이 입력해라'); //내가 입력한 나이가 age 변수에 대입됨
+        console.log(age);
+
+        let str2; //값이 할당되지 않은 상태 
+        console.log(str2);  //undefined
+
+
+
+
+
+    </script>
+</body>
+</html>
+
+//데이터 유형을 파악하며 boolean 으로 변수의 값이 true인지 false인지 확인 할 수 있다.
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+      let name='tom';
+      let age=44;
+
+      //tom은 44살이다
+      document.write(name+"은 " + age + "살이다" +"<br><br>");
+
+      let name2='juli';
+      let msg="환영해요!!";
+      //juli님 환영해요!! 출력
+      document.write(name2 +"님 " +msg +"<br><br>");
+
+      let name3='bob';
+      let age2=22;
+
+      //백틱사용(내 이름은 bob이고 나이는 22살이다)
+      //백틱에서 변수를 사용할 때 ${변수명}으로 사용한다
+      let message=`내 이름은 ${name3}이고 나이는 ${age2}살이다`;
+      document.write(message +"<br>" );
+
+      //내년에는 나이가 23살이 된다
+      let message2=`내년에는 나이가  ${age2+1}살이 된다`;
+      document.write(message2+"<br>");
+
+      let a=3;
+      let b=4;
+
+      //백틱으로 3+4=7 입니다.-> 브라우저에 출력
+      let n=`${a}+${b}=${a+b} 입니다.`;
+      document.write(n);
+
+
+
+
+
+    </script>
+</body>
+</html>
+
+//백틱 ` 을 사용하여 변수 나열을 할 수있다.
+// 백틱`을 사용할 경우 ${}를 이용하여야 한다.​
