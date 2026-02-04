@@ -1,1 +1,30 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+    <script>
+        document.write(Number.MAX_SAFE_INTEGER);
+        document.write("<br>");
+        document.write(10+"<br>"+typeof(10));
+        document.write("<br>");
+        document.write(typeof(10n));
+        //숫자 뒤에 N을 붙이면 bigint형이 된다.
+        // bigint는 정수만 가능. (3.4) error
+        // 10n+1 // 더할수 없다. 데이터 값이 상이함
+//   document.write(typeof(10n) = bigint
+//   document.write(typeof(10) = number
+        //10n+1n // 더할수 있음 .데이터 값이 같음.
+
+
+    </script>
+</body>
+</html>
+
+// 숫자열을 사용할수 있는 함수는 number, bigint 가 있음
+// 보편적으로 사용되는 함수는 Number ( 64bit)
+// 큰 숫자 (ex) 회계, 금융, 블록체인 등 값이 큰 경우 bigint 고정 한계값x 무한대
+
+
