@@ -318,3 +318,173 @@
 
 //중첩if문. 문이라는 개념을 이해해야함. {}의 위치를 기억하며 코드를 이해한다
 
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+       // let coffee=prompt('커피 선택!');
+        //조건문
+        //switch(coffee){ //입력한 문자열이 아메리카노 일경우 : 뒤 코드가 실행됨.
+       //    case '아메리카노' :
+        //        console.log ('4700원');
+        //        break; //입력한 문자열이 일치할 경우 탈출 !
+        
+        let coffee=prompt('커피 선택')
+        if(coffee==('아메리카노')){
+            console.log('4700원')
+        }
+        else{
+            console.log('')
+        }
+    </script>
+</body>
+</html>
+
+//스위치문을 이프문으로 변환할수있다.
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+        //주민번호 앞자리 입력
+        let num = parseInt(prompt('주민번호 앞자리 입력'));
+
+      /*  switch(num){
+            case 1 : 
+            case 3 :
+                alert('남자')
+            break;
+
+            case 2 :
+            case 4 :
+                alert('여자');
+            break;
+            
+        }
+        */
+
+        if(num==1 || num==3){
+            alert('남자');
+        }
+        else if(num==2 || num==4){
+            alert('여자');
+        }
+        else{
+            alert('중성?');
+        }
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+        let money;
+        let food=prompt('간식 뭐 먹을래?');
+
+        switch(food){
+            case '피자' :  //입력된 값이 피자일 경우
+                money = 40000; //값 변경 (let은 가능 const 불가능)
+                break;
+            
+            case '치킨' :
+                money = 30000;
+                break;
+
+            default :
+                money =10000;
+                break;
+                //백틱으로 '내 간식은 ~~원 이네'라고 출력하기
+                
+        }
+        document.write(`내 간식은 ${money}원 이네`);
+    </script>
+</body>
+</html>
+
+//항상 {}문을 신경쓸것.
+//break는 입력된 값이 같을 경우 이후에 {}안의 모든 코드는 실행되지 않는다
+
+//{}에 대한 설명. 블록으로 생각해야함 블록 안에서 선언된 변수는 블록 안에서만 활용할 수 있다.
+
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+        let a=3;
+        a+=5; //a=a+5; 이 두 연산은 같은것. 복합 대입 연산자
+        document.write(a); //8
+document.write('<br>');
+        a-=5; //a=a-5; 
+        document.write(a); //3
+document.write('<br>');
+        a*=5; //a=a*5;
+        document.write(a); //15
+document.write('<br>');
+        a/=5; //a=a/5;
+        document.write(a); //3
+document.write('<br>');
+        a%=5; //a=a%5;
+        document.write(a); //3
+document.write('<br>');        
+
+        let str='자바';
+        str += '스크립트'; //str = str + 스크립트
+        console.log(str);
+
+
+    </script>
+</body>
+</html>
+
+//복합 대입 연산자를 활용할 수 있다.
+// 자주 쓰이는 연산자.
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+        //전위 연산자: 변수 앞에 연산자가 나옴 ++a, --a
+        //후위 연산자: 변수 뒤에 연산자가 나옴 a++, a--
+        //1씩 증가
+
+        let num=10;
+        ++num; 
+        console.log(num);
+
+        let num1=10;
+        num1++; 
+        console.log(num1);
+        
+        let num2=10;
+        console.log(++num2); //전위 연산자일 경우 바로 실행 -> 11
+        console.log(num2++); //후위 연산자일 경우 바로 실행되지 않음 -> 10
+        console.log(num2); //따라서 이 후에 num2를 출력할 경우 1이 더해진 12
+
+        let num3=10;
+        console.log(num3++); 
+
+        let a=1;
+        let b=++a; //연산을 먼저 한 이후에 대입하겠다는 의미
+
+        console.log(a); //2 이유는 연산을 먼저 했기 때문에 
+        console.log(b); //2 
+
+        let a1=1;
+        let b1=a1++ // 대입을 먼저 한 이후에 연산
+
+        console.log(a1);//2
+        console.log(b1);//1
+        
+    </script>
+</body>
+</html>
+
+//전위 연산자 인지 후위 연산자 인지 확인하며 이후 코드진행을 예상할 수 있다.
