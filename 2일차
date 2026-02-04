@@ -82,4 +82,215 @@
 </body>
 </html>
 
-//
+//여기서 유의할 것은 var let 은 재선언이 가능하기에 parseInt로 데이터 유형을 변경할수 있지만 const는 재선언 불가능하기에 데이터 유형이 변경되지 않기에 string으로 유지된다.
+//const를 사용할 경우 A에 const로 선언하였을때 이 후 B로 parseInt를 이용하여 변수를 새로 지정할 수 있다.
+
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+
+        document.write(parseInt('23'+'<br>'));//23은 정수로 변환이 가능
+        document.write(parseInt('abc')); //하지만 abc는 자체가 문자이기 때문에 변환X
+        //Nan(Not a Number)
+        document.write("23" + 10 + "<br>");
+
+        document.write(parseFloat('23')+"<br>")//23
+         document.write(typeof(parseFloat("23"))+ '<br>')//number
+         document.write(parseFloat('23.125')+"<br>")//23.125
+          document.write(parseInt('23.125')+"<br>")//23
+
+    </script>
+</body>
+</html>
+
+//여기서 확인 할 수있는것은 parseInt는 정수만을 출력하고 
+//parseFloat는 실수를 출력할 수 있다.
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+        //prompt로 점수 입력받아 백틱으로 띄우기
+       
+        /*
+        let score=prompt('점수?')//string
+        document.write(`내 점수는 ${score}점 입니다.`+'<br>')
+        */
+
+        if(9<10){
+            document.write("작다")
+        }
+        else if(5<10){
+            document.write("5는 10보다 작다");
+        }
+        else{ //9>=10
+            document.write("크다")
+        };
+        //if문이 true일 경우 뒤의 조건식은 확인하지않는다.
+        //반대로 false일 경우 else 조건식으로, else가 false일 경우 else if로 넘어간다.
+        </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+        let n1 = 3>2; //참
+        let n2 = 10<3;//거짓
+        let n3 = 20==10; //거짓
+        
+        document.write(n1 && n2 + '<br>');//모든 조건식이 true 여야만 true로 출력 F
+        document.write((n1 && n2 && n3) + '<br>');//3 변수 모두 true여야 한다.F
+
+        document.write((n1 || n2) + '<br>');//둘 중 하나만 참이여도 O T
+
+        document.write(!n1 + "<br>"); //결과값의 반대로 출력 F
+        document.write(!n2 + "<br>");//T
+        document.write(!n3 + "<br>");//T
+        
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+        let kor = parseInt(prompt ('국어 점수'));
+        let math = parseInt(prompt ('수학 점수'));
+        let eng = parseInt(prompt ('영어 점수'));
+
+        if( math >= 60 && kor >= 80 && eng >= 90 ){
+                alert('합격!');
+        }
+        else{
+                alert('불합격');
+        }
+
+
+      /*
+      let n1 = 3>2; //참
+        let n2 = 10<3;//거짓
+        let n3 = 20==10; //거짓
+        
+        document.write(n1 && n2 + '<br>');//모든 조건식이 true 여야만 true로 출력 F
+        document.write((n1 && n2 && n3) + '<br>');//3 변수 모두 true여야 한다.F
+
+        document.write((n1 || n2) + '<br>');//둘 중 하나만 참이여도 O T
+
+        document.write(!n1 + "<br>"); //결과값의 반대로 출력 F
+        document.write(!n2 + "<br>");//T
+        document.write(!n3 + "<br>");//T
+        */
+    </script>
+</body>
+</html>
+
+//and or not을 응용할수있다.
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+        let ok=confirm('정기구독을 하시겠습니까?')
+
+        if(ok==true){ //ok누르면
+            alert('결제가 진행됩니다.');
+        }
+        else{ // 취소 버튼 클릭시 ok == false
+            alert('취소되었습니다.')
+        }
+        /*
+        else if (!ok){
+            alert('취소되었습니다')
+        }
+        */
+    </script>
+</body>
+</html>
+
+//if문과 confirm을 이용할 수 있다.
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+        let n= parseInt(prompt('정수 입력'));
+
+        if(n%2==0){ //입력한 수를 2로 나누었을때 나머지가 0 = 짝수
+            alert(`${n}은(는) 짝수다`)
+        }
+        else if(n%1==0){
+            alert(n + '은(는) 홀수다')
+        }
+
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+    
+        let x=35;
+        let y=x/10;
+        let z=x%2;
+        let n='35';
+        //let 변수 지정시 , 를 이용하여 한줄에도 가능
+        //예시 let a= true, b=false
+
+        document.write((x!==y) + "<br>");
+        document.write((x==y) + "<br>"); //문자비교
+        document.write((x===y) + "<br>"); //데이터 타입비교
+
+        let a= true, b=false;
+        document.write((a&&b) +'<br>');
+        document.write((a||b) +'<br>');
+        document.write((a===b) +'<br>');
+    
+        //데이터 자료형 : 논리(boolean),숫자,문자,객체,undifined
+    </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+    
+        //프롬창에 이름 입력해서
+        //취소 강제로 닫을경우 "이름 없다" 브라우저 출력
+        //아무것도 입력 X 이름 입력 안함 출력
+        //이름 입력할 경우 (위 조건이 다 아닐경우)
+
+
+       let name=prompt('이름을 입력');
+       if(name==null){
+            document.write('이름없음')
+       }
+       else if(name==""){
+            document.write('이름이 입력되지 않음')
+       }
+       else{
+            document.write(name)
+       }
+    </script>
+</body>
+</html>
+
+//코딩 진행중 버그 확인을 쉽게 하기 위해선 f12 콘솔창에 들어가 sources창으로 중단점을 찍어 확인할 수 있다.
+// 항상 eqaul 등호는 두개씩 !
