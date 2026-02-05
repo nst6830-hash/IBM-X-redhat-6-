@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+        //반복문 -> while, do~while, for
+        //자주 사용되는 반복문은 for
+        //초기식, 조건식, 증감식
+
+       // let n=1; //초기식
+
+       // while(n<=10){     //조건식 1부터 10보다 작거나 같을때 까지 중괄호 코드 반복
+            //반복할 실행코드 
+            //document.write(n + " ");      //10번 반복해서 1부터 10까지
+            //n++;      // 증감식 1 증가 1 2 3 4 5 6~
+            // }
+   
+   
+let n=1; //초기식 
+
+/*do { document.write(n + " "); 
+     n++; //증감식
+	
+}
+ while(n<=10); //조건식
+        
+    //do while 은 실행되는 증감식이 앞순서에 있기 때문에 아래에 조건식에 부합하지 않더라도
+    //증감식이 실행된다. 최소 한번
+*/ 
+        //   초기    조건    증감
+        for(let n=1; n<=10; n++){ //1~10까지 1씩 증가
+            document.write(n + "<br>"); // 출력
+        };
+
+    document.write("<br>");
+
+        for(let n=2; n<=10; n+=2){ //2부터 2의 배수로 증가
+            document.write(n + "<br>");
+        }
+
+    document.write("<br>");
+
+        for(let n= 10; n>=0; n--){ //10부터 0까지 감소
+            document.write(n +"<br>")
+        }
+    </script>
+</body>
+</html>
+
+//2일차에 배운 반복문을 사용할 수 있다.
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+        //prompt로 정수 입력받음 -> 입력한 정수(문자열 타입)=> 정수타입으로 변환
+        let n=parseInt(prompt('정수 입력'));
+
+        switch(n){
+            case 2:
+                for(let i=1;i<=9;i++){ //1~9까지 1씩 증가
+                    document.write(`2단 출력 ${n*i}` + "<br>");
+                }
+                break;
+
+            case 3:
+                for(let i=1;i<=9;i++){
+                    document.write(`3단 출력 ${n*i}` + "<br>");
+                }
+                break;
+            
+            default:
+                document.write("2,3단 아니네~");
+                break;
+        }
+    
+   
+    </script>
+</body>
+</html>
+//prompt로 입력된 값은 항상 string 정수로 변환 하고 싶다면 parseInt를 이용하자
+// 의도를 확실히 !
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+        //for문 중첩
+        //바깥 for문을 기준으로 안쪽 for문이 반복된다.
+            //구구단 출력해보기
+            //n=2일때 ㅡ=1~9 반복
+            for(let n=2; n<=9; n++){ // 2 3 4 5 6 7 8 9
+                for(let m=1; m<=9; m++){
+                    document.write(n + "*" + m + "=" + (n*m)+ "<br>");
+                }
+
+            }
+        for(let n=5; n<=9; n++){
+            for(let m=1; m<=9; m++){
+                document.write(n + "*" + m + "=" + (n*m) + "<br>")
+            }
+        }
+    </script>
+</body>
+</html>
+
+//for문 중첩으로 구구단을 출력할수 있다.
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+        //for문으로
+        //1~100 까지 범위 5의 배수만 출력
+
+        for(let n=1; n<=100;n++){ //전제 조건
+            if(n%5==0){ //세부 조건
+                document.write(n + "<br>");
+
+            }
+
+        }
+        //for문으로 전제조건을 확립한 후 세부 조건으로 출력 하기
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+
+        //1~99 까지 while 문 1,2,3,,,99
+        // let n= 1;
+        // while(n<100){
+        //     if(n%2==0){
+        //         document.write(n + "<br>");   
+        //     }
+        //         n++;
+        // }
+        
+        
+        // // for(let n=1; n<100; n++){
+        // //     if(n%2==0)
+        // //     document.write(n + "<br>")
+
+        // }
+        //while문을 for문으로 변환 할 수있다.
+        //여기서 확인 할 수있는것은 for문안에 증감식이 들어가듯 
+        //while문 안에 증감식을 넣어야한다.( while문 안에 있는 if문에 증감식 X )
+
+        let m=1;
+
+        do{
+            if(n%2==0){
+            document.write(m + "<br>");
+            }
+            m++;
+
+        }while(m<=99);
+
+
+
+
+
+
+
+        //for문으로
+        //1~100 까지 범위 5의 배수,6의 배수만 출력
+     //   for(let n=1; n<=100;n++){ //전제 조건
+     //       if(n%5==0 && i%6==0){ //세부 조건
+     //           document.write(n + "<br>");
+
+     //    }
+      //  }
+        //for문으로 전제조건을 확립한 후 세부 조건으로 출력 하기
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+        let sum=0; //초기값 설정
+        //더하기 할때 에는 초기값을 0
+        
+        // for문으로 1~100 1씩 증가해서 5의 배수만 출력
+        // for(let n=0; n<=100; n++){
+        //     if(n%5==0){
+        //     document.write(n + "<br>")
+        //     }
+        // }
+        
+        // for문으로 1~100 1씩 증가해서 5의 배수의 총합 출력
+        for(let n=0; n<=100; n++){
+            if(n%5==0){
+                sum+=n; // sum=sum+n
+                
+            }
+                
+        }
+        document.write(sum);
+        //반복된 값을 누적된 값을 출력해야하기 때문에 for문 밖에 출력코드
+
+
+
+
+
+    </script>
+</body>
+</html>
+
+//for문을 이용하여 누적된 값을 도출할수 있다.
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+         let a=prompt('정수1입력')
+         let b=prompt('정수2입력')
+
+        // if(a>b){
+        //     document.write(a);
+        
+        // }
+        // else{
+        //     document.write(b);
+        // }
+        let n=(a>b)?a:b; //조건이 T ?뒤 실행, // 조건이 F :뒤 실행
+            document.write(n);
+
+    </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+        // //이 코드는 2의 배수를 제외하고 출력하기 (1~100)
+        // for(let i=1;i<=100;i++){
+        //     if(i%2==0){ //조건(2의배수이면)
+        //         continue; //반복문 다시 실행
+        //     }
+        //     document.write(i+"<br>");
+        // }
+        
+        //정수 입력 5번 하기 (횟수)
+
+        let sum=0;
+        for(let i=0;i<5;i++){
+            let n=parseInt(prompt('정수입력'));
+           
+            if(n<0){
+                continue; //올라가서 반복문 실행
+            }
+            else{ //n>=0
+                sum+=n;
+            }
+        }
+            document.write(`입력된 총 합 ${sum}`);
+            
+            //sum  사용시 초기값 0설정 하기
+
+        // while(true){ //조건문에 T 무한반복문
+        //     let name=prompt('이름');
+        //     if(name == '길동'){
+        //         break;
+        //     }
+        //     document.write(name);
+        //}
+    </script>
+</body>
+</html>
+
+//continue를 이용해 반복문 실행을 할 수 있다.
