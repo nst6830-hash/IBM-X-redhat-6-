@@ -283,3 +283,502 @@ let n=1; //초기식
 </html>
 
 //continue를 이용해 반복문 실행을 할 수 있다.
+
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+    
+//     1. 1~20까지 합(do~while)
+// 2. n1을 50, n2를 100으로 초기화하여 두 수 중 큰 수를 판별하여 출력해라. (삼항 연산자 활용)
+// 3.1 1~50 정수 중 6의 배수를 출력해라.(for, if)
+// 3.2 1~50까지의 총합 출력해라.
+// 4. 0~30까지 중에서 5의 배수를 제외하고 출력해라(무한반복문과 break, continue를 다 사용)
+
+
+
+
+       document.write('1번문제'+'<br>');
+        let n=1;
+        let sum=0; //sum은 항상 0 초기값 설정
+
+        do{
+            sum+= n; //n=sum+n
+            n++;
+        }
+        while(n<=20)     
+            document.write(sum);
+
+                document.write("<br>");    
+        document.write('2번문제'+'<br>');
+            let n1=50
+            let n2=100
+            let a=(n1>n2)? n1 : n2
+            document.write(a);
+
+                document.write("<br>"); 
+        document.write('3.1번문제'+'<br>');
+        
+       
+
+            let m;
+        for(m=1; m<=50; m++){
+            if(m%6 == 0){
+                document.write(m + "<br>");
+        }
+        }
+                
+        document.write('3.2번문제'+'<br>');
+            let c;
+            sum=0;
+
+            for(c=1; c<=50; c++){
+                sum += n;
+            }
+            document.write(sum);
+                document.write("<br>"); 
+        document.write('4번문제'+'<br>');
+
+            for(let i=1;i<=30;i++){
+                if(i%5==0){
+                    continue;
+                }
+                document.write(i);
+            }
+
+    </script>
+</body>
+</html>
+//문제를 풀어보며 확인
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+    
+        document.write("1+2+3"+"<br>"); //1+2+3
+
+        let n=eval("1+2+3");//문자열이 실제로 연산되는 함수
+        document.write(n + "<br>");
+
+        let calculator = prompt("수식입력");
+        let result=eval(calculator);
+
+        document.write(`${calculator} = ${result}`); //프롬프트로 입력된 수식(string)의 계산
+
+
+        
+
+    //    while(true){
+    //     if(){
+    //         break;
+    //    }
+    // }
+    //    for(;;){
+
+    //    }
+
+    //    //무한루프 예시코드
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+    //함수 왜 쓰는가
+    //반복해서 사용되는 코드의 집합을 만들어 필요할 때 마다 호출해서 사용.
+    //일종의 모듈화
+    function fun1(){ //함수의 정의만 구현 
+        for(let i=1; i<=10; i++){
+         document.write(i);
+     }
+    }
+
+    fun1();
+
+    //함수를 호출해야 함수가 실행된다!!!
+    //함수 정의보다 먼저 호출해도 실행된다.호이스팅
+    //하지만 가능한 함수 정의를 먼저 하는것이 좋다.
+    
+
+
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+    //함수 왜 쓰는가
+    //반복해서 사용되는 코드의 집합을 만들어 필요할 때 마다 호출해서 사용.
+    //일종의 모듈화
+    // function fun1(){ //함수의 정의만 구현 
+    //     for(let i=1; i<=10; i++){
+    //      document.write(i);
+    //  }
+    // }
+
+    // fun1();
+
+    //함수를 호출해야 함수가 실행된다!!!
+    //함수 정의보다 먼저 호출해도 실행된다.호이스팅
+    //하지만 가능한 함수 정의를 먼저 하는것이 좋다.
+
+
+        // function hello(){
+        //     alert("ㅎㅇ");
+
+        // }
+        // hello();
+
+        //매개변수=입력값=파라미터
+        function fun(name){//함수명
+            let msg= `안녕 ${name}`//name이라는 파라미터를 받아서 msg에 저장
+            console.log(msg); // 
+        }
+        fun('길동');// 길동 -> name 
+        //함수를 호출해야 함수 안의 블럭이 실행된다.
+
+
+
+    </script>
+</body>
+</html>
+//함수를 설정하고 정의하여 불러올 수 있다.
+//함수를 사용할 때에는 정의를 먼저하는것이 좋다.
+// 매개변수는 입력값이며 파라미터. 함수를 사용할 때 에는 매개변수를 설정하여 코드진행을 한다.
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+        function gugu(){
+            let n=prompt("단 입력")
+
+            for(let i=1; i<=9; i++){
+                document.write(n*i + " ");
+
+            }
+        }
+        gugu();
+        
+    </script>
+</body>
+</html>
+
+//함수를 이용하여 구구단 출력 코드 진행을 정의할 수 있다.
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+
+       
+        //함수명 sumMulti
+        //매개변수는 2개 (x,y)
+        //return (결과값 반환):
+        function sumMulti(x,y){//입력값 (x,y)
+            if(x==y){ //x와 y 값이 같다면 
+                return x*y; //x * y 값을 반환한다.(출력값)
+            }
+            else{ // x와 y 값이 다르다면
+                return x+y; // x+y 값을 반환 (출력값)
+            }
+        } 
+        
+        console.log(sumMulti(4,10));
+        console.log(sumMulti(10,10));
+        
+
+        function susmMulti1 (x,y){
+            return (x==y)?(x*y) : (x+y);
+        }
+            console.log(susmMulti1(4,10))
+            console.log(susmMulti1(10,10))
+            
+
+
+        // function gugu(){
+        //     let n=prompt("단 입력")
+
+        //     for(let i=1; i<=9; i++){
+        //         document.write(n*i + " ");
+
+        //     }
+        // }
+        // gugu();
+        
+    </script>
+</body>
+</html>
+
+//함수 정의를 통해 코드를 진행하고 삼항조건연산자로 변경할 수 있다.
+
+
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+        let x=parseInt(prompt('입력'));
+        let y=parseInt(prompt('입력'));
+
+        //함수명 : maxXY
+        //매개 변수는 x y
+        function maxXY (x,y){
+            if(x==y){
+                return '같다';
+            }
+            else if(x>y){
+                return `${x}가 ${y}보다 크다`
+
+            }
+            else{
+                return`${x}가 ${y}보다 작다`
+            }
+        }
+       //함수 호출 alert로 
+        alert(maxXY(x,y));
+
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+
+        function pro(n){
+            //document.write("나이는" + n + "살이다");
+            return `나이는 ${n}살이다`;
+        }
+
+
+        pro(2); //나이는 2살이다
+        pro(25);
+        //함수 호출의 갯수는 제한이 없다.
+        
+
+        
+    </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+        //두 수중 큰 값 출력
+        function big(a,b){
+            return a>b? a : b
+        }
+        document.write(big (4.4,1.1))
+
+
+        //1~100까지 합 받는 함수 구현
+        // function total(a,b){
+        //     let sum=0;
+
+        //     for(let i=a; i<=b; i++){
+        //     sum+=i;
+        // }
+        //     return sum;
+        // }
+
+        //     document.write(total(1,100));
+
+    //     function meter (ki){
+    //         return (ki/100);
+    //     }
+    //   //alert(meter(parseInt(prompt('입력'))));//함수 호출과 동시에 출력
+    //     let n=parseInt(prompt("입력"));
+    //         document.write(meter(n));
+
+        //return에 출력문이 없기 때문에 
+        
+
+
+        // function total(a,b){//함수 호출 시 a는 1 b는 10
+        //     for(let i=a; i<=b; i++){
+        //         document.write(i +"<br>");
+
+        //     }
+        // }
+        // total(1,10);//함수호출 ->1~10까지 수 출력
+        // total(1,100);//함수호출 -> 1~100 까지 수 출력
+        //for문 안에 출력문이 있음
+    </script>
+</body>
+</html>
+
+//문 안에 출력문 유의
+
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+        //전역변수 : global variable : 전체 코드에서 사용가능
+        // 함수 밖에서 선언 / 프로그램 전역에서 사용 가능
+        //지역변수 : local variable : 선언된 함수 내에서만 사용가능
+        // 선언된 함수 안에서 사용가능
+        
+        let n=10; //전역변수 (블록 밖에서 선언)
+
+        function f(){
+            let m=1; //지역변수 (함수 안에 있기 때문)(블럭 안에서만 효력발생)
+            document.write(m);
+            document.write("<br>");
+            document.write(n+"<br>");
+        }
+        f();
+
+        document.write(n+"<br>"); //출력됨
+        document.write(m+"<br>"); //출력되지 않음
+
+
+    </script>
+</body>
+</html>
+
+//지역변수와 전역 변수 
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+        function cal(x,y,z){
+            switch(x){ //스위치를 만들어 준다는 개념 (만들어진 스위치는 사칙연산들)
+                case '+' :
+                    document.write(y+z);
+                    break;
+
+                case '-' : 
+                    document.write(y-z);
+                    break;
+
+                case '*' :
+                    document.write(y*z);
+                    break;
+
+                case '/' :
+                    document.write(y/z);
+                    break;
+
+
+            }
+        }
+        let a=prompt('사칙연산중 하나'); // + - / *
+        let b=parseInt(prompt('첫번째 정수 입력'));
+        let c=parseInt(prompt('두번째 정수 입력'));
+
+        cal(a,b,c);
+
+    </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+        //1~10까지 합을 구하라. (for, while, do~ while)
+        
+        //for문
+
+        // let sum= 0;
+
+        //  for(let a=1; a<=10; a++){
+        //      sum+=a;  
+    
+        //  }
+        //  document.write(sum);
+
+        //while문
+
+        // let sum=0;
+        // let a=1;
+        // while(a<=10){
+        //     sum+=a;
+        //     a++
+        // }
+        // document.write(sum);
+
+        //do~while문
+
+        // let a=1;
+        // do{
+        //     sum+=a;
+        //     a++;
+        // }
+        // while(a<=10)
+        //     document.write(sum);
+
+        //2. while문을 이용하여 정수를 여러개 입력받고 평균 출력.
+        //(0이 입력되면 종료)
+       
+        // let sum=0;
+        // let cnt=0;
+        
+
+        // while(true){
+        //     let a=parseInt(prompt('정수입력'))
+            
+        //     if(a==0){   
+        //         break;
+        //     }
+        //     sum+=a
+        //     cnt++
+        // }
+        // document.write(sum/cnt);
+    //     let i=0, sum=0; // 10 , 30 
+    //     while(true){
+    //         if(i<10){
+    //             i+=2
+    //             sum+=i;
+    //         }
+    //         else{
+    //             break;
+
+    //         }
+        
+    //   }
+
+    //   document.write(sum);
+    // let i=0, sum= 0 //10 ,30
+    // do{
+    //     i++;
+    //     if(i%2==1){
+    //     continue;
+    //     }
+    //     sum+=i;
+
+    // }
+    // while(i<10)
+    // document.write(sum);
+
+            
+    </script>
+</body>
+</html>
+
+//
