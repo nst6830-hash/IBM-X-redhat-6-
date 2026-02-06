@@ -553,8 +553,109 @@
             
                 
         }
+    //2. 1. 두 정수 입력받아 두 수가 같으면 두 수 곱, 
+    // 다르면 합을 출력하는 함수를 구현해라.
+
+    function sum(){
+        let n1=parseInt(prompt('1번째 정수'));
+        let n2=parseInt(prompt('2번째 정수'));
+
+        if(n1==n2){
+            alert(n1*n2);
+        }
+        else{
+            alert(n1+n2);
+        }
+    }    
+    sum();
+
         
     </script>
 
 </body>
 </html>
+
+<!DOCTYPE html>
+<head>
+
+</head>
+<body>
+    <script>
+
+    // let a=parseInt(prompt('1~4 사이의 정수를 입력하세요'))
+    //     if(isNaN(a)){
+    //         alert('정수가 아닙니다.')
+    //         }
+    //         if(a<1 || a>4 ){
+    //             alert('1~4 사이의 정수 입력')
+    //         }
+        
+        
+    //     switch(a){
+            
+             
+
+            
+    //         case 1 :
+    //             alert('남자')
+    //             break;
+    //         case 2 :
+    //             alert('여자')
+    //             break;
+    //         case 3 :
+    //             alert('남자')
+    //             break;
+    //         case 4 :
+    //             alert('여자')
+    //             break;
+            
+                
+    //     }
+    //2. 1. 두 정수 입력받아 두 수가 같으면 두 수 곱, 
+    // 다르면 합을 출력하는 함수를 구현해라.
+
+    // function sum(){
+    //     let n1=parseInt(prompt('1번째 정수'));
+    //     let n2=parseInt(prompt('2번째 정수'));
+
+    //     if(n1==n2){
+    //         alert(n1*n2);
+    //     }
+    //     else{
+    //         alert(n1+n2);
+    //     }
+    // }    
+    // sum();
+    // let sum=0;
+    // let n=parseInt(prompt('정수입력'));
+    // for(let i=0;i<=n;i++){
+    //     sum+=i;
+    // }
+    // alert(sum);
+// function star(){
+//     let n=parseInt(prompt('정수입력'));
+//         if(isNaN(n)){
+//             alert('오류');
+//         }
+//         else{
+//             for(let i=0;i<=n;i++)
+            
+//         }
+// }
+// star();
+    //     function star(){
+    //     let n=parseInt(prompt('정수입력'))
+    //         if(isNaN(n)){
+    //             prompt('오류')
+    //         }
+    //     for(let s=0;s<n;s++){
+    //        document.write('*');
+    //     }
+    // }
+    // star();
+    </script>
+
+</body>
+</html>
+//문제를 풀어보며 조건을 잘 생각해서 하나씩 구현해보자. 그렇게 하면 어디서 문제가 생기는지 확인하기 쉽다.
+// ex)1.정수를 담다 2.정수가 아니면 ~출력 등등 하나씩 구별하기
