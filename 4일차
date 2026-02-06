@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+        //parseInt, eval,isNaN
+        
+        // let n=100;
+        // let m=prompt('수 입력');//prompt로 입력된 값은 string
+        // //수식으로 들어갈 경우 자동으로 형 변환이 되기 때문에 Number로 들어가 
+        // //결과적으론 else로 들어간다.
+
+        // //Is Not a Number 수식이 NaN이면 T (문자가 입력되면 T)
+        // if(isNaN(m)){//문자열이여야 T
+        //     alert('다시 입력');
+        // }
+        // else{
+        //     alert(n*m);
+
+        // }
+
+        document.write(isNaN(100));
+        //출력하면 false 이유? 문자가 아니라 숫자열이기 때문
+        document.write(isNaN("100"));
+        //Num으로 자동 형 변환 -> 숫자열 
+        document.write(isNaN('anc'));
+        // 문자열이기 때문에 True
+        document.write(isNaN(3.3));
+        //실수의 값도 자동 형 변환으로 숫자열 flase
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+    
+    function gugu(){ //함수 안에 반복문이 2개
+        let n;
+        while(true){
+            n=parseInt(prompt('정수입력'));
+            //1보다 작거나 9보다 크거나 수가 아닐 경우
+            if(n<1 || n>9 || isNaN(n)){
+                alert('1부터 9 사이의 정수입력');               
+            }
+            else{
+                break;
+            }            
+        }        
+        for(let i=1; i<=9; i++){
+            document.write(`${n}*${i}=${n*i}<br>`)
+        }
+    }
+    gugu()
+
+    </script>
+</body>
+</html>
+
+//함수를 설정하고 함수안에 정수입력과 무한반복문 while(true)와 for문을 이용하여 구구단 출력하기
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+        function show(a,b){
+            let str="";
+            for(let i=1;i<=b;i++){
+                str+=a;                
+            }
+            return str;
+        }
+    
+    document.write(show('$',10));
+        //출력문을 보고 함수 호출,함수의 이름,매개변수를 확인할수 있다.
+
+    </script>
+</body>
+</html>
+
+//함수를 이용하여 문자열 연결
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+        // let 변수명  = function(){
+
+        // }
+        // 변수명();
+
+        //function(){}
+            //좀더 간결하게 작성하는 함수(화살표 함수)
+            //1. 변수식 (변수명=함수명)
+            let sum= function(a,b){
+                return a+b;
+            }
+
+            alert(sum(3,4));
+
+
+            //2. 화살표 함수!! react에서 많이 사용
+            //function 키워드 없음(간결)
+
+            let sum1=(a,b) =>{
+                return a+b;
+                    
+            }
+            alert(sum(3,4))
+            //화살표 함수 사용시 function 키워드와 return 키워드 불필요
+            // 화살표 앞이 매개변수, 화살표 뒤가 return, {}불필요
+             let sum2=(a,b) => a+b;
+                alert(sum2(3,4));
+
+
+            // let 변수명 = (a,b) => {
+            //     return a+b;
+            // }
+
+            //alret로 hi 출력하는 함수
+
+             let pro=() =>{
+             alert("hi");
+             }
+             pro();
+
+            let profile=(a,b)=>{
+                let msg=`${a},${b}` //,를 사용해 변수를 넣을수 없기에 `로 묶음
+                return msg;
+            }
+
+            alert(profile('aa',3))
+
+
+
+
+            
+
+    </script>
+</body>
+</html>
+
+//function 함수설정을 => 화살표 함수를 통해 간결화 할 수 있다.
+// => 화살표 함수는 react에서 요긴하게 쓰인다. (중요!)
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+        //데이터 유형
+        //숫자,문자,undifined,객체(배열array), 논리(boolean)
+        
+        //배열 : 여러개의 값을 저장하는 공간
+        //      인덱스 번호로 규칙을 줌 -> 0부터 시작
+
+        let ary = [1,2,3,4,5];
+        //[]가 배열의 특징
+        let ary1 = [1,'a']
+        //Js 에선 문자열,숫자열 섞을 수 있음
+        document.write(typeof(ary)+ '<br>') //object로 출력됨
+        document.write(ary[0] + ' ' + ary[1] + ' ' +ary[2] + '<br>');
+        //출력문 1,2,3 ? 순서를 생각했을 때에 0부터 시작이기에 ary[0]출력은 1
+        
+        //배열 개수
+        document.write(ary.length);
+        //출력문 5 ? 1,2,3,4,5 총 다섯개
+
+        //인덱스 번호는 0부터 시작하기 때문에 배열 갯수보다 작다.
+        for(let i=0; i<ary.length; i++){
+            console.log(ary[i]);
+            //출력문 콘솔창에 인덱스 번호 0~4 -> 1,2,3,4,5
+        }
+        for(let i in ary){ //배열이 가지고있는 인덱스 값을 변수 i에 저장!
+            console.log(i);
+        }
+        // 인덱스를 출력한다. in
+        // 저장된 변수값을 출력하고싶을때엔 ary[i]를 삽입
+    </script>
+</body>
+</html>
+
+//array? [] 를 이용해 array설정 사용할 수 있다.
+//for문으로 in 사용하여 배열이 가지고있는 인덱스 값을 변수에 저장할 수 있다.
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+       let student={ // student라는 객체 안에 name, age, height, show 라는 변수 지정
+      name : 'juli',
+      age:42,
+      height:188,
+      weight:66,
+      show : function(){
+        console.log(`${student.name}`);
+      }
+    }
+    student.show(); //함수호출      
+    </script>
+</body>
+</html>
+
+//
+
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+       //기본 객체 선언방식
+       //객체를 기준으로 해서 js 코드 구현 가능
+       
+        let car = { //객체명은 car
+            name :'소나타', 
+            color :['red','black','white'],
+            fuel : '전기',
+
+            operating : function(e){
+                if(e=='on'){
+                    alert('시동 on');
+                }
+                else if(e=='off'){
+                    alert('시동 off');
+                }
+            }
+        }
+        console.log(car.color);//객체 car에 있는 name 이라는 변수 출력
+        //배열시 객체명[인덱스]
+        console.log(car.color[1]);
+        console.log(car.fuel);
+
+
+        //method (함수) 호출 -> 객체명.함수명
+        console.log(car['name']);
+        car.operating('on');
+        
+        
+
+
+        //속성 호출 -> 객체명.속성명, 객체명[속석명]
+
+        // function(){}
+        // let n=
+        // let m=()=>{}
+
+        </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+    let student={
+        name : 'mike',
+        show : function(){
+            console.log(student.name);
+            
+        }
+    }
+    student.show();
+//객체명은 student, 객체 안 함수는 show()
+    let student1={
+    name : 'mike',
+    show : function(){
+            console.log(this.name);
+            
+        }
+    }
+    student.show();
+    //this ? show 함수가 들어있는 객체를 의미
+    
+    </script>
+</body>
+</html>
+
+//객체 안에 들어가 있는 함수를 구별하고 this를 이용해 객체안에있는 show 함수를 대신해 사용할 수 있음.
+//this 객체 자신
+//아래는 예시이다
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+    //this : 객체 자신을 의미
+    //1 기본 객체 구조
+    let student ={
+        name :'tom',
+        test : function(){
+            console.log(`${this.name}`);
+            
+        }
+    }
+    let student2 ={
+        name :'tom2',
+        test : function(){
+            console.log(`${this.name}`);
+            
+        }
+    }
+    student.test(); //tom
+    student2.test(); //tom2
+    
+    </script>
+    </script>
+    
+</body>
+</html>
+
+//객체명이 변경 되어도 메소드 내에 객체명을 사용하지 않고 좀 더 효율적인 코드 진행-> this
+
+
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+    //this : 객체 자신을 의미
+    //1 기본 객체 구조
+    let student ={
+        name :'tom',
+        test : test
+                  
+    }
+    let student2 ={
+        name :'tom2',
+        test : test
+}                           
+         function test(){
+            console.log(`${this.name}`);   
+       }
+    
+    student.test();
+    student2.test();
+
+    </script>
+    </script>
+    
+</body>
+</html>
+
+//위에 있는 코드 진행을 this를 통해 좀 더 간결하게 작성하기
+
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+        //1. 기본 객체 구조
+        
+        
+        //비슷한 객체를 여러개 만든다 ? 붕어빵 틀을 만들어 뒀다고 생각하면 된다.
+        
+        //2. 생성자 함수(비슷한 객체를 여러개 만들 때)this
+
+        let adr='서울';//변경 사항이 없는 데이터는 함수에 넣지 않고 전역변수로 선언(const)
+
+        function Item(product, price, deliver){
+            this.product=product; //새로 생성되어지는 객체 자신
+            this.price=price;
+            this.deliver=deliver;
+        
+            this.show=function(){
+                console.log(`${adr} ${product} 가격은 ${price}이고 배송은 ${deliver}`);
+            } 
+        }
+        //실제 객체 생성코드
+        //            Item(product,    price,   deliver) 먼저 설정된 Item이라는 함수로 아래에 연결
+        let item1=new Item('핸드폰케이스',30000,'로켓배송')
+        let item2=new Item('양말',20000,'새벽배송')
+
+        item1.show();
+        item2.show();
+        
+
+
+
+
+
+    </script>  
+</body>
+</html>
+
+//생성자 함수(비슷한 객체)를 여러개 만들때에 this 이용하며, 
+// 실제 객체 생성코드를 연결할 수 있다.
+
+//아래는 위 코드를 변형해 응용한 이름과 시험점수 나열이다
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+
+
+        function test (name, kor, eng, math){
+            this.name=name; 
+            this.kor=kor;
+            this.eng=eng;
+            this.math=math;
+
+        
+            this.average =function(){
+                console.log(`${name}의 국어점수는 ${kor}영어점수는${eng}수학점수는${math}`);
+            } 
+        }
+        //실제 객체 생성코드
+        //            Item(product,    price,   deliver) 먼저 설정된 Item이라는 함수로 아래에 연결
+        let a=new test('김길동',95,85,85)
+        let b=new test('이길동',88,77,90)
+        let c=new test('박길동',66,76,79)
+        
+
+        a.average();
+        b.average();
+        c.average();
+        
+
+    </script>  
+</body>
+</html>
+
+<!DOCTYPE html>
+<head>
+
+</head>
+<body>
+    <script>
+     function cafe (coffe){
+        alert(coffe + '나왔습니다');
+        //this.value ? 버튼 내 설정한 value를 함수호출 하기 위해 설정하는것
+     }
+
+    </script>
+<!--버튼명은 한글, 버튼을 클릭시 cafe라는 함수가 호출 여기서 value값은 영문(실제 데이터)-->
+    <button onclick="cafe(this.value)" value="americano">아메리카노</button>
+    <button onclick="cafe(this.value)" value="latte">라떼</button>
+    <button onclick="cafe(this.value)" value="smoothie">스무디</button>
+
+
+
+    
+</body>
+</html>
+
+//html 버튼을 이용하기
+
+
+<!DOCTYPE html>
+<head>
+
+</head>
+<body>
+    
+    
+    <button onclick="food(this.value)" value="food1">라면</button>
+    <button onclick="food(this.value)" value="food2">떡볶이</button>
+    <button onclick="food(this.value)" value="food3">김밥</button>   
+    <script>
+
+               //함수명 
+
+     let rest='신전떡볶이';
+        //객체=변수+함수
+    function Menu(title, price, num){
+        this.title=title;
+        this.price=price;
+        this.num=num;
+
+        this.result=function(){
+            alert('분식집'+ rest);
+            alert('선택한 메뉴 정보'+ this.title +','+ this.price+','+this.num );
+
+        }
+    }
+    let food1= new Menu('떡라면',4500,1)
+    let food2= new Menu('치즈떡볶이',12000,2)
+    let food3= new Menu('참치김밥',10000,4)
+
+        function food(v){
+            if(v=='food1'){
+                food1.result();
+
+            }
+            else if(v=='food2'){
+                food2.result();
+
+            }
+            else if(v=='food3'){
+                food3.result();
+            }
+        }
+        
+        //변수(속성) : 대상에 대한 정보 (크기,색상,모양 등)
+        //함수(기능) : 대상이 가지고있는 기능 (음량조절, 채널변경, 전원끄고 켜기 등)
+
+        //생성자함수 : 기본적인 틀을 구현하고 비슷한 객체를 생성하기 위함 
+
+
+
+    </script>
+
+</body>
+</html>
+
+//버튼을 만들어 생성자함수를 활용하기
+
+//1. 1~4 사이의 정수를 입력 받아 prompt() 함수로 받아서 변수에 담는다
+//switch 문을 사용해서 변수를 비교해 남녀를 판단해서 alert()로 출력한다.
+//1~4 사이의 정수가 아니거나 문자이거나 하는 경우는 1~4사이의 정수를 입력하라고 alert()로 출력한다.
+
+<!DOCTYPE html>
+<head>
+
+</head>
+<body>
+    <script>
+
+    let a=parseInt(prompt('1~4 사이의 정수를 입력하세요'))
+        if(isNaN(a)){
+            alert('정수가 아닙니다.')
+            }
+            if(a<1 || a>4 ){
+                alert('1~4 사이의 정수 입력')
+            }
+        
+        
+        switch(a){
+            
+             
+
+            
+            case 1 :
+                alert('남자')
+                break;
+            case 2 :
+                alert('여자')
+                break;
+            case 3 :
+                alert('남자')
+                break;
+            case 4 :
+                alert('여자')
+                break;
+            
+                
+        }
+        
+    </script>
+
+</body>
+</html>
