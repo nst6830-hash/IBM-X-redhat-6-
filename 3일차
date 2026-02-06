@@ -347,6 +347,23 @@ let n=1; //초기식
                 }
                 document.write(i);
             }
+        let n=0; //초기식
+
+        while(true){
+            if(n>30){
+                break;
+            }
+            if(n%5==0){
+                n++; //1증가
+                continue;
+            }
+            document.write(`${n}`+ ' ');
+            n++; //증감식 (반복문wihle 안에)
+        }
+        
+            
+
+//강사님 풀이
 
     </script>
 </body>
@@ -736,20 +753,39 @@ let n=1; //초기식
         //2. while문을 이용하여 정수를 여러개 입력받고 평균 출력.
         //(0이 입력되면 종료)
        
-        // let sum=0;
-        // let cnt=0;
+        // let sum=0; //총합
+        // let cnt=0; //입력된 횟수
         
 
         // while(true){
         //     let a=parseInt(prompt('정수입력'))
             
-        //     if(a==0){   
+        //     if(a==0){  //0이 입력될 경우 종료 
         //         break;
         //     }
-        //     sum+=a
-        //     cnt++
+        //     sum+=a //sum=sum+a
+        //     cnt++ //정수가 입력되면 변수값 1 증가
         // }
         // document.write(sum/cnt);
+
+//강사님 풀이
+
+    let sum=0; //총합 변수
+    let i=0; //정수의 입력된 횟수
+       
+        while(true){
+            let n=parseInt(prompt('정수입력'))
+            sum+=n; //sum=sum+n
+            i++;
+
+            if(n==0){
+                i--; //0을 입력할 경우 i 변수값 증가 x
+                break;
+            }
+        }
+        document.write(`${sum/i}`)
+
+
     //     let i=0, sum=0; // 10 , 30 
     //     while(true){
     //         if(i<10){
@@ -764,6 +800,23 @@ let n=1; //초기식
     //   }
 
     //   document.write(sum);
+
+//강사님 풀이
+
+let i=0, sum=0;
+        
+        while(true){
+            if(i%2==0){
+                sum+=i;
+        }
+        if(i>=10){
+            break;
+        }     
+        i++;
+    }
+    document.write(sum);  
+
+
     // let i=0, sum= 0 //10 ,30
     // do{
     //     i++;
@@ -776,9 +829,46 @@ let n=1; //초기식
     // while(i<10)
     // document.write(sum);
 
+
             
     </script>
 </body>
 </html>
 
 //
+    //구구단의 짝수단만 출력
+
+    let dan=2; //초기식
+    while(true){
+        if(dan==10){ // 조건식
+            break;
+        }
+        for(let i=1; i<=dan ;i++){ //곱하는 수가 단 정수값이 같아질 때 까지만 출력 
+            document.write(dan + '*' + i + '=' + (dan*i) + "<br>");
+
+        }
+        dan+=2; //증감식
+
+    }
+
+
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+        //전역변수
+        let name ='tom'; //변수 선언 및 초기화
+
+        function call(){           
+            let msg='hi';//지역변수
+            console.log(`${msg} ${name}`);
+
+        }
+        call()
+       // console.log(msg); 지역변수이기 때문에 함수 문 밖으로 나왔기에 실행안됨
+        
+    </script>
+</body>
+</html>
