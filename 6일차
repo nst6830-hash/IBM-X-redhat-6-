@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+
+<!-- <body id="body"> -->
+    <body id="week">
+
+    <div>
+       
+
+    </div>
+
+    <script>
+        
+        // 1. 웹 페이지를 접속할 때, 월~수요일이면 배경색을 green, 목~금요일이면 blue로 출력해라. 
+        // (Date객체의 getDay() 활용, 일요일=0. 월요일=1, …토요일=6이다)
+        
+        // let body=document.getElementById('body');
+
+        // let date=new Date();
+        // let week=date.getDay();
+
+        // if(week=>1 && week<=3){ 
+        //     body.style.backgroundColor="green"
+        // }   
+        // else if(week>=4 && week<=5){
+        //     body.style.backgroundColor="blue"
+        // }
+
+
+        // let a = document.getElementById('week');
+        // let b = new Date();
+        // let c = b.getDay();
+
+        //  if(c=>1 && c<=3){ 
+        //      week.style.backgroundColor="green"
+        // }   
+        //  else if(c>=4 && c<=5){
+        //      week.style.backgroundColor="blue"
+        //  }
+    // 생성자 함수만들어서 매개변수에 name,score 추가
+    // 생성자 함수안에 함수를 만들어
+    // 90점 이상이면 A 80점 이상이면 B 그 이외 F
+    // 두개 객체 만들고 결과값 출력
+        // function test(name,score){
+        //     this.name=name;
+        //     this.score=score;
+        //     this.show=function(){
+        //         if(90<=score){
+        //             document.write((name)+'A');
+        //         }
+        //         else if(80<=score){
+        //             document.write((name)+'B');
+        //     }
+        //         else{
+        //             document.write((name)+'F');
+        //         }
+
+        //     }
+        // }
+        // let stu1=new test('mike',93);
+        // let stu2=new test('jake',88);
+
+        // stu1.show();
+        // stu2.show();
+
+
+    </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+
+<body>
+   <div class="di1">
+      <h2>Test 1</h2>
+      <h2>Test 2</h2>
+      <h2>Test 3</h2>
+      <h2>Test 4</h2>
+   </div> <!--div  자식 Test 1,2,3,4-->
+  <h2 id="a">Test 5</h2>
+  <h2 id="a1">Test 6</h2>
+
+<script>
+    //class 명 + tag명
+    let n=document.querySelectorAll(".di1 h2");
+
+    n[0].style.color='tomato';
+    n[1].style.color='chocolate';
+    n[2].style.color='salmon';
+    
+    document.write(n.length); // 배열의 길이(갯수) 4
+    
+
+</script>
+
+
+</body>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+
+<body>
+ <button onclick="on()">눌러!!</button>
+    삼성전자가 최근 공개한 최신 <span>폴더블폰</span> ‘갤럭시Z폴드7’의 배터리 테스트 결과가 공개됐다고
+    IT매체 샘모바일이 보도했다.
+    IT유튜브 <span>러버 오브 테크(Lover Of Tech)</span>는 최근 삼성 갤럭시Z폴드7과 
+    이전 제품인 <span>갤럭시Z폴드 6,</span> 갤럭시Z폴드5의 배터리 테스트 결과를 영상으로 공개했다.
+<script>
+
+    function on(){ //눌러!! 버튼 클릭시
+        //Tagname으로 span 태그 가져오기
+        let n=document.getElementsByTagName('span');
+        // document.write(n.length); //3
+    
+        for(let i=0;i<n.length;i++){
+            n[i].style.color='orange';
+            n[i].style.fontSize='30px';
+        }
+    }
+
+</script>
+
+
+</body>
+
+
