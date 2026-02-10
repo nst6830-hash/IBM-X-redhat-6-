@@ -133,4 +133,75 @@
 
 </body>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+
+<body id="body">
+ <button onclick="on()">배경색을 바꿔본다.</button>
+
+
+<script>
+    function on(){
+        //id값으로 body객체 추출
+        // document.getElementById("body");
+        let n=document.querySelector("#body");
+        // let str=new Array[];
+        let str=["red","orange","yellow","green","blue"];
+
+        //버튼 클릭시 body태그 객체를 알아내서 body 범위를 배열에서 준 색으로 무작위 변경
+
+        //for문을 사용하지 않아도 실행할수 있음 -> 따로 범위를 설정하지 않고 전체에 적용했기 때문임
+        // for(let i=0;i<str.length;i++){
+        //     //0~4까지 범위 설정
+        //     let m = parseInt(Math.random()*5); //정수에서 0~4 무작위 값
+        //  위 parseInt를 아래처럼 사용 할 수 있음
+            // let m= Math.floor(Math.random()*5);
+        //     n.style.backgroundColor=str[m];
+        //}
+
+        let m = parseInt(Math.random()*5); 
+            n.style.backgroundColor=str[m];
+        }
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+
+<body>
+    <ol type ="A" id="ramen" onclick="on()">
+       <h1> <li>물 넣기</li></h1>
+        <li>라면 넣기</li>
+        <li>계란 넣기</li>
+        <li>냠냠</li>
+    </ol>
+
+
+
+<script>
+    //li 객체 추출 -> tagname
+    let a = document.getElementsByTagName('li');//id 객체는 .로 불러오기  
+    //document.write(a.length);
+
+    for(let i in a){
+        a[i].style.color='GREEN';
+    }
+    
+    //ol 객체 클릭할 때에 배경색을 yellow
+
+    function on(){
+        let m = document.getElementById('ramen');
+        m.style.backgroundColor='yellow'
+    }
+
+     
+    </script>
+
+
+</body>
+
 
