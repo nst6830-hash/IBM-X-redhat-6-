@@ -467,6 +467,43 @@
 //html에서 자주 쓰이는 양식,모양이다 잘 숙지하자
 
 <!DOCTYPE html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+</head>
+    <script>
+        
+    </script>
+<body>
+    <!--  -->
+   식 : <input type="text" id="cal"><br>
+   값 : <input type="text" id="res"><br>
+   <input type="button" value="계산" onclick="calcu()">
+    
+
+    <script>
+
+        //식을 입력하여 계산 버튼을 누르면 결과값 도출 구현
+     function calcu(){
+        let cal=document.getElementById('cal'); //cal에 대한 id 추출
+        let res=document.querySelector('#res'); //res 에 대한 id 추출 
+                                                //quertSelector 로 불러오면 꼭 #
+        
+        //document.write(cal.value);//input 태그에서 .value -> 텍스트 창에 입력한 실질적 데이터
+        res.value=eval(cal.value);
+     }
+
+
+    </script> 
+
+
+
+
+</body>
+</html>
 <html lang="en">
 <head>
     <!-- 1. <p></p>태그로 “무슨 언어 배울거에요? 라고 출력한 후 출력된 문자열을 클릭하면  -->
@@ -643,6 +680,167 @@ function on(){
 
 
 
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+</head>
+    <script>
+
+        </script>
+<body>
+    <p>자신이 하는 일을 <span id="like">좋아하게</span> 되는 것</p>
+    <button onclick="on()">변경</button>
+
+    
+
+    <script>
+        let n=document.getElementById('like');
+        n.style.color='violet';
+        n.style.width='4em';
+        n.style.display='block'
+        
+        //3. Prompt() 함수를 이용하여 문자열을 입력해 “,” 를 기준으로 문자를 분할하여 출력해라.
+        // let a=prompt('문자입력');
+        // let str=a.split(',');
+
+        // document.writeln(str+ '<br>');
+
+        // for(let i in str){
+        //     document.write(str[i])
+        // }
+
+
+        // 4. 오늘 날짜 시간을 출력해라. 
+        // (2025. 7. 16 오전 10:30:10 이러한 식으로 출력)
+        // 4.1) Date 객체로 년, 월, 일도 각각 출력해라
+
+        // let now=new Date();
+        // let year=now.getFullYear()
+        // let mon=now.getMonth()+1
+        // let day=now.getDay();
+        // let hour=now.getHours();
+        // let min=now.getMinutes();
+        // let s=now.getSeconds();
+
+        // let str =hour >12 ? '오후' : '오전';
+
+        // document.write(`${year}.${mon}.${day} ${str}${hour}:${min}:${s}`)
+
+      
+
+
+    </script> 
+
+
+
+
+</body>
+</html>
+
+//문제를 풀어보며 코드를 응용할 수 있다.\
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+   
+    <input type="radio" name="coffee" value="americano">아메리카노
+    <input type="radio" name="coffee" value="latte">라떼
+    <input type="radio" name="coffee" value="cappucino">카푸치노
+
+    <input type="button" value="클릭해" onclick="on()">
+
+   <script>
+
+      let menu=null; //null 데이터 타입은 객체이다.
+
+      //document.write(typeof(menu)); // object
+
+      function on(){
+         let coffee=document.getElementsByName("coffee");  //복수(배열형태)
+         //document.write(coffee.length); //3
+         for(let i=0;i<coffee.length;i++){
+            if(coffee[i].checked==true){
+               menu=coffee[i];   //라디오버튼 체크가 되어있는 값을 menu변수에 저장
+            }
+         }
+         alert(menu.value +"주문 들어갔습니다"); //선택한 라디오버튼의 value값
+      }
+
+
+      
+    
+   </script> 
+
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+   <input type="checkbox" value="80" onclick="score(this)">자바
+    <input type="checkbox" value="100" onclick="score(this)">DB
+    <input type="checkbox" value="90" onclick="score(this)">파이썬 <br>
+
+    총합 <input type="text" id="tot" value="0">
+   <script>
+
+    let sum=0;
+    function score(obj){
+        if(obj.checked){//체크 박스가 체크 -> True
+            sum+= parseInt(obj.value);//sum=sum+obj.value -> 
+            // 체크한 value 값을 정수로 변환 -> 총합 도출
+        }
+         else{ //체크가 해제되었을 때
+            sum-= parseInt(obj.value)
+        }
+        let n=document.getElementById('tot').value=sum;
+       
+    }
+   </script> 
+
+ 
+   
+
+</body>
+</html>
+
+//체크 박스를 이용하여 총합의 수를 구하고, 체크가 해제되었을 때엔 다시 -가 되도록 할 수 있다.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+   <img class ='im' src="C:/Users/hi/Desktop/라멘.jpg">
+
+   <button onclick="on()">이미지 경로</button>
+   <button onclick="onchange()">이미지 경로 변경</button>
+
+   <script>
+//img 태크 객체 추출 -> class -> quertSelector로 
+ let image = document.querySelector('.im'); //class 로 가져올 때에는 . 사용
+ 
+ function on(){
+    alert(image.getAttribute('src')); //속성명 가져오는
+
+ }
+function onchange(){
+    alert(image.setAttribute('src','aa.png')); //속석명 바꾸는
+    
+ }
+   </script> 
+
+ 
+   
 
 </body>
 </html>
