@@ -205,3 +205,445 @@
 </body>
 
 
+//복습해보기
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+
+<body>
+    <script>
+//분 을 알아내서 분이 짝수이면 배경색 yellow
+//홀수면 red 로 하고
+//분도 브라우저에 띄운다
+
+        let date=new Date();
+        let min=date.getMinutes();
+        if(min%2==0){  
+            document.body.style.backgroundColor='yellow'
+        }
+        else{
+            document.body.style.backgroundColor='red'
+        }
+
+        document.write(`지금은 ${min}분 입니다`);
+        
+    </script>
+</body>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+
+<body>
+    <script>
+
+        let ary=new Array('tom','juli','jack');
+        let ary1=new Array('bob');
+        let n;
+
+        function show(n){
+            document.write(n+"<br>");
+
+        }                               
+                                        //index 0     1      2      0 
+        n=ary.concat(ary1); //원본 ary는 변경 X ['tom','juli','jack','bob']
+        show(n);
+
+        n=ary.slice(1,2); //index 1부터 2 미만 = index 1 -> 원본 ary는 변경 X
+        show(n);
+
+
+        n=ary.sort(); //배열 정렬 (사전순으로 a,b,c~가,나,다~) -> 원본 배열 변경
+        show(n);
+
+        n=ary.reverse() //배열 순서 반대로 정렬 -> 원본 배열 변경
+        show(n);
+
+        n=ary.toString(); //배열을 문자열로 변환 
+        document.write(typeof(n) + "<br>"); 
+        show(n);
+        //pop, shift, push, unshift => 원본 유지 안됨(원본 변경)
+    </script>
+</body>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+
+<body>
+    <script>
+
+        function show(n){
+            document.write(n+"<br>");
+        }
+            //0~99사이 수 소수점 이하 제거해서 10개 출력
+        for(let i=0;i<10;i++){
+            let n=Math.floor(Math.random()*100);
+            show(n)
+        }
+    </script>
+</body>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+    <script>
+
+        function calcu(){
+            //1~9까지 소수점 X 정수만 뽑기
+            return Math.floor(Math.random()*9+1);
+        }
+
+    </script>
+<body>
+    <script>
+
+
+
+
+    let n=calcu() + '*' + calcu();
+
+    let n1=prompt(n+"의 정답은?");
+        if(n1==null){ //n1이 null 일 경우
+            document.write("종료");
+        }
+        else{ //n1 이 null 이 아닐 경우
+            let result=eval(n); 
+            document.write(typeof(result));
+            document.write(typeof(n1));
+            if(result == n1){ //자동 형 변환 비교가능
+                    document.write('정답')                  
+            }
+            else{
+                        document.write('오답')
+            }
+        }
+
+
+    </script>
+</body>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+    <script>
+
+    </script>
+<body>
+    <script>
+        //1. 기본 객체 선언 방식 2.생성자 함수 선언 방식 (비슷한 객채 여러개 만들 때)
+
+        function n(name,id,money){ //틀 만들기
+            this.name=name; //name객체에 mike 변수 대입
+            this.id=id;     //6830
+            this.money=money;//10000
+
+            this.money1=function(){
+                return this.money;
+            }
+
+             this.plus=function(num){
+                return this.money+=num
+            }
+
+             this.minus=function(nmu){
+                return this.money-=num;
+            }
+        }
+
+        let cos1=new n('mike','6830',10000)
+        let cos2=new n('jack','9921',14000)
+
+        document.write(cos1.name);
+
+        //plus 함수 호출
+        cos1.plus(5000);
+        document.write(cos1.money1() + "<br>");
+        
+
+
+        // let n={ //객체
+        //     //기본 속성
+        //     name:'juli', //string
+        //     id: '123',   //string
+        //     money: 5000, //number
+        //     //메소드's (함수)
+        //     money1:function(){ //객체에 포함되는 함수
+        //         return this.money;
+        //     },
+
+        //     plus:function(num){
+        //         this.money+=num; //this.money=this.money+num
+                
+        //     },
+
+        //     minus:function(num){
+        //         this.money-=num;
+        //     }
+        // }
+        // n.plus(5000); //this.money = 10000 5000+5000
+        // document.write(n.money1() + "<br>");
+        // n.minus(4000); //this.money = 6000 10000-4000
+        // document.write(n.money1() + "<br>");
+    </script>
+</body>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+    <script>
+        function on(){ // 함수의 위치는 호이스팅의 개념에 따라 상관없다.
+        //span 태그 객체 추출 (id로 접근)
+        let n=document.getElementById("java");
+        n.style.color = 'coral';
+        n.style.fontSize = '30px';
+        n.style.display = 'block';//줄 바꿔지면서 출력
+        n.style.border = '3px dotted pink'; //테두리( 테두리두께, 모양, 색)
+    }
+    </script>
+<body>
+    <script>
+    
+    </script>
+    <p>자바
+        <span id = "java">스크립트</span>
+    </p>
+
+    <input type="button" value="버튼" onclick="on()">
+
+
+    <script>
+    
+    </script>
+</body>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+    <script>
+
+    </script>
+<body>
+
+
+    이름 :<input type = 'text' placeholder="4~10 사이 공백없이"><br>
+    이메일 :<input type = 'email'><br><!--@기호가 있어야함-->
+    비밀번호 :<input type = 'password'><br>
+    가입경로 :<select>
+            <option>블로그</option>
+            <option>인스타</option>
+            </select>
+
+    메모 :<textarea></textarea><br>
+            <!-- 라디오 버튼은 하나만 선택가능 -->
+    <input type="radio" name="mail"> 메일 수신
+    <input type="radio" name="mail"> 메일 수신 안함<br>
+
+    <input type="checkbox"> 메일 수신
+    <input type="checkbox"> 메일 수신 안함
+   
+    <!-- ** submit 버튼 ** 입력한 값을 서버에 전송하는 버튼 -->
+    <input type="submit" value="가입하기">
+    <input type="reset" value="취소">
+    
+    <script>
+
+    </script>
+</body>
+</html>
+
+//html에서 자주 쓰이는 양식,모양이다 잘 숙지하자
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 1. <p></p>태그로 “무슨 언어 배울거에요? 라고 출력한 후 출력된 문자열을 클릭하면  -->
+    <!-- prompt() 에 배우고 싶은 언어를 입력한다. 그 입력한 문자열을 웹 페이지에 출력해라. -->
+</head>
+    <script>
+
+    </script>
+<body>
+
+    <p onclick='on()'>무슨 언어를 배우고 싶나요</p>
+
+    <script>
+function on(){
+    let a=prompt('언어입력;');
+   document.write(a); 
+}
+
+    </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 1. <p></p>태그로 “무슨 언어 배울거에요? 라고 출력한 후 출력된 문자열을 클릭하면  -->
+    <!-- prompt() 에 배우고 싶은 언어를 입력한다. 그 입력한 문자열을 웹 페이지에 출력해라. -->
+</head>
+    <script>
+
+    </script>
+<body>
+    
+    <script>
+        window.onload=function on(){ //window.onload html를 먼저 로딩한 이후에 실행되는 함수. 
+            let a=document.getElementById('test');
+            a.style.color='red'
+        }
+    </script>
+   <p id="test" onclick=on()>Test</p>
+    <!-- <p onclick='on()'>무슨 언어를 배우고 싶나요</p>
+
+    <script>
+function on(){
+    let a=prompt('언어입력;');
+   document.write(a); 
+} 
+
+    </script> -->
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 1. <p></p>태그로 “무슨 언어 배울거에요? 라고 출력한 후 출력된 문자열을 클릭하면  -->
+    <!-- prompt() 에 배우고 싶은 언어를 입력한다. 그 입력한 문자열을 웹 페이지에 출력해라. -->
+</head>
+    <script>
+
+    </script>
+<body>
+    <h1 id="head1"></h1>
+    <h1 id="head2"></h1>
+    <h1 id="head3"></h1>
+
+
+
+    <script>
+        let a=document.querySelector('#head1');
+        let b=document.getElementById('head2');
+        let c=document.querySelector('#head3');
+
+        a.innerHTML='자바스크립트'; //비어있는 head1에 글자를 삽입 <h1 id="head1">자바스크립트</h1>
+        a.innerHTML='안녕 <a href= "#"> 링크1 </a>';
+
+        //innerText 텍스트로만 인식 태그 인식 X
+        b.innerText='파이썬'//<h1 id="head2">파이썬</h1>
+        b.innerText='안녕 <a href= "#"> 링크2 </a>';
+        //textContent 텍스트로만 인식 태그 인식 X
+        c.textContent="리액트"
+        c.textContent='안녕 <a href= "#"> 링크3 </a>';
+
+
+
+    </script> 
+
+<!-- 
+<a href="http://naver.com">naver</a>
+<a href="http://google.com">google</a>
+<a href="#">daum</a> 
+-->
+
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style> 
+    /* .name : span 태그 영역 -> 길동 */
+        .name{ 
+            display: none; 
+        }
+    </style>
+   
+</head>
+    <script>
+        
+    </script>
+<body>
+ 
+    <h3 id="head">
+        반갑습니다. <span class="name">길동</span>님
+
+    </h3>
+
+    <script>
+        //h3 태그 추출
+        let a=document.getElementById('head');
+
+        console.log(a.innerHTML);//    반갑습니다. <span class="name">길동</span>님
+        //모든텍스트,태그 인식
+        console.log(a.innerText);//    반갑습니다. 님
+        //사용자에게 보여지는 text만 출력
+        console.log(a.textContent);//  반갑습니다. 길동님
+        //태그에 상관없이 모든 text 를 출력
+        
+        
+
+
+    </script> 
+
+
+
+
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+</head>
+    <script>
+        
+    </script>
+<body>
+ <select id="year"></select>
+    <option></option>
+    <option></option>
+    
+
+    <script>
+      let n=document.getElementById('year');
+      let str='';
+
+      //날짜 객체 생성해서 오늘 년도 get
+      let now=new Date();
+      let year=now.getFullYear();
+
+      for(let i=year;i>=1980;i--){
+        str=str+'<option>'+i+"년</option>"
+      }
+    n.innerHTML=str; //유일한 태그 인식
+    
+
+    </script> 
+
+
+
+
+</body>
+</html>
+
