@@ -139,4 +139,63 @@
 
 </html>
 
-\
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<button onclick="on()">버튼 눌러줘!!</button>
+<body>
+    
+    (세종=연합뉴스)신선미 기자 = <span>정부가</span> 물량 부족에 따른 가격 상승을 막기위해 2030
+    년까지 <span>사과,배 계약재배</span> 물량을 각각 세배,1.5배로 늘리고 <span>기후변화에</span> 대응해 강원
+    도에 <span>사과 재배지</span>를 2천ha(헥타르.1만m2) 조성하기로 했다.
+    
+    <script>
+        function on(){
+            let a=document.getElementsByTagName('span')
+            for(i=0;i<a.length;i++){
+            a[i].style.fontSize='30px'
+            a[i].style.color='orchid'
+            }
+        }
+
+    </script>
+
+  
+</body>
+
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <input type="checkbox" value="5000" onclick="pri(this)">아메리카노 5000원
+    <input type="checkbox" value="5500" onclick="pri(this)"> 라떼 5500원
+    <input type="checkbox" value="7000" onclick="pri(this)"> 딸기라떼 7000원<br>
+
+    내야할 금액 <input type="text" id="tot">
+    <script>
+        let sum=0;
+        
+        function pri(obj){
+            if(obj.checked){
+                sum+= parseInt(obj.value);
+            }
+            else{
+                sum-=parseInt(obj.value)
+            }
+            let n = document.getElementById('tot').value=sum;
+        }
+        
+    </script>
+
+  
+</body>
+
+</html>
+
+//function 문을 사용할 때에는 항상 실행문 위치를 확인하자. (오타도 항상 검수)
