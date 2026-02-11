@@ -103,3 +103,40 @@
 </body>
 
 </html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    이름 : <input type="name" id="name"><br>
+    성적 : <input type="text" id="score"><br>
+    <input type="submit" name="저장" id="set">
+    <input type="reset" name="리셋" id="re">
+    <ul id="n">
+
+    </ul>
+    <script>
+        let name=document.getElementById('name');
+        let sco=document.getElementById('score');
+        let sub=document.getElementById('set');
+        let re=document.getElementById('re');
+
+        sub.addEventListener('click',function(){
+            let a=document.createElement('li');
+            a.innerHTML = `${name.value}님의 성적은${sco.value}점 입니다.`
+            n.appendChild(a);
+        })
+        re.addEventListener('click',function(){
+            n.innerHTML=' '
+        })
+
+    </script>
+
+  
+</body>
+
+</html>
+
+\
