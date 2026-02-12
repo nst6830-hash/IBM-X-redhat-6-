@@ -382,3 +382,177 @@
 
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body><!-- 문제 4 -->
+    <h1 onclick='on()'id="java">자바스크립트</h1>
+   <script>
+    let n=document.querySelector('#java');
+
+    n.onclick = function(){
+        n.style.color='yellow'
+        n.style.backgroundColor='black'
+    }
+
+   </script>
+
+
+</body>
+
+
+
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body><!-- 문제 2 -->
+    <h1 id="java">색 이벤트</h1>
+   <script>
+    let n=document.querySelector('#java');
+
+    n.ondblclick = function(){
+        n.style.backgroundColor='pink'
+    }
+    n.onmouseout = function(){
+        n.style.backgroundColor = 'blue'
+    }
+    
+
+   </script>
+
+
+</body>
+
+
+
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+
+    </style>
+</head>
+<body>
+    <!-- 사용자 정의속성 (data- (dataset)) -->
+    <div class="div1">
+        <h2>주문</h2>
+        <div class="div2">
+            <h2 data-num='에스프레소' data-price="4000">더블샷</h2>
+            <h2 data-num='라떼' data-price="5000">라떼</h2>
+            <h2 data-num='아메리카노' data-price="4500">아메리카노</h2>
+        </div>
+        <p> 
+            <span id="order">메뉴없음</span>
+            <span id="price">0</span>원
+        </p>
+
+
+    </div>
+   <script>
+    let menu = document.querySelectorAll(".div2 h2");
+    let n2 = document.getElementById('order');
+    let n3 = document.getElementById('price');
+    
+    for(let i=0; i<menu.length;i++){
+        menu[i].addEventListener('click',function(){
+            //let menu2=this.getAttribute('data-num');
+            let menu2=this.dataset.num; //선택한 커피 메뉴
+            let price2=this.dataset.price;
+            console.log(menu2);
+            console.log(price2);
+            //메뉴는 n2 가격은 n3에띄우기
+            n2.innerText=menu2;
+            n3.innerText=price2;
+
+
+        })
+    }
+   </script>
+
+
+</body>
+
+
+
+</html>
+
+
+
+//위에 있는 코드를 다른 방식으로 표현해보기
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+
+    </style>
+</head>
+<body>
+    <!-- 사용자 정의속성 (data- (dataset)) -->
+    <div class="div1">
+        <h2>주문</h2>
+        <div class="div2">
+            <h2 data-num-menu='에스프레소' data-price="4000">더블샷</h2>
+            <h2 data-num-menu='라떼' data-price="5000">라떼</h2>
+            <h2 data-num-menu='아메리카노' data-price="4500">아메리카노</h2>
+        </div>
+        <p> 
+            <span id="order">메뉴없음</span>
+            <span id="price">0</span>원
+        </p>
+
+
+    </div>
+   <script>
+    let menu = document.querySelectorAll(".div2 h2");
+    let n2 = document.getElementById('order');
+    let n3 = document.getElementById('price');
+    
+    for(let i=0; i<menu.length;i++){
+        menu[i].addEventListener('click',function(){
+            //data-num-menu
+            let menu2=this.dataset.numMenu; //선택한 메뉴
+
+            //data속성이 영문자 2개일 경우 
+            //앞에 속성은 그대로, 뒷부분은 대문자로(카멜표기법)
+            let price2=this.dataset.price;
+            // let price2=this.dataset['price']; //선택한 메뉴 가격
+            
+        })
+    }
+   </script>
+
+
+</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+  <script>
+    //**1초마다 n을 1씩 증가시키면서 출력하는 함수**
+    let n=1;
+
+    let out= setInterval(function(){
+        document.write(n+'초가 지났다');
+        n++;
+    },1000)
+    
+    //10ch 경과 후 타이머 멈추기
+    setTimeout(function(){ 
+        clearInterval(out); //전역 함수 
+    },10000)
+  </script>
+
+
+</body>
+
+</html>
