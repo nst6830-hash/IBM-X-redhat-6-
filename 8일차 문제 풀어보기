@@ -56,3 +56,33 @@
 
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+    <body>
+<ul>
+<li class="1">데이터 베이스</li>
+<li class="2">빅데이터</li>
+<li class="3">Ai</li>
+
+</ul>
+    </body>
+<script>
+    //각각의 글자를 클릭하면 1.2배씩 증가
+    let n= document.getElementsByTagName('li');
+
+    for(let i=0;i<n.length;i++){
+    n[i].onclick = function(){
+        this.style.fontSize='1.2em'
+        
+    }
+}
+    
+
+</script>
+  
+</body>
+</html>
+</html>
+
