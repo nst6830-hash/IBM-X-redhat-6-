@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <!-- html 인라인 이벤트에선 매개변수 명은 event 로 ! -->
+  <p id="mouse1">마우스</p>
+  <button onclick="on(event)">클릭!</button>
+
+
+    <script>
+       function on(e){ //e : 현재 이벤트 객체
+        let event1=e.type+"<br>" // 이벤트 종류
+        + e.target + '<br>'     //어떤 태그객체에서 이벤트가 발생했는지
+        + e.currentTarget + "<br>" + e.defaultPrevented;
+        // 이벤트가 연결된 요소         ***기본동작이 취소 되었는지에 대한 여부 (prevent = 막다)***
+        
+
+        //<a href="http://www.naver.com" : 페이지 이동(기본동작)
+        //e.defaultPrevented; 
+
+
+        //event1을 p태그 사이 (마우스 자리 )에 띄우기 -> innerHTML
+        
+        document.getElementById("mouse1").innerHTML=event1; //클릭시 click 출력
+
+       }
+
+    </script>
+
+  
+</body>
+
+</html>
+
+//인라인 이벤트에 대한 설명과 디폴트프리벤티드
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <!-- 페이지 이동(기본동작) -->
+    <a href="http://www.naver.com" onclick="return on()"> 네이버로 이동하기 </a><br>
+
+    <!-- 체크박스 체크(기본동작) -->
+    <input type="checkbox">커피<br>
+    <input type="checkbox" onclick="no(event)">빵
+    <!-- 인라인 이벤트는 항상 'event'를 넣어야함 -->
+    <script>
+  
+  function on(){
+    let n=confirm('정말 네이버로 이동하시겠습까?') ; //확인 T 취소 F
+    return n; //return : n의 값을 반환받기 (확인을 누르면 T 네이버로 이동)
+  }
+
+  function no(e){
+    e.preventDefault();//이벤트의 디폴트 행동 강제 취소
+  }
+    </script>
+
+  
+</body>
+
+</html>
+
+//인라인 이벤트 이용과 이벤트의 디폴트 행동을 강제 취소하는법 
+//인라인 이벤트는 항상 'event'를 넣어야함
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+<div class="frame">  
+
+    <h1>javascript</h1>
+        <div class="c">
+    <h2>css</h2>
+
+        <p>  
+        8일 국내 및 글로벌 시장에 론칭한 악마단 돌겨억은 출시 3일만인 지난 
+        11일 구글플레이 인기 게임 순위 1위에 기록한 데 이어 16일에는 애플 앱스토어에서도 1위를 차지했다. 
+        악마단 돌겨억은 지난 7일까지 싱가포르와 호주에 소프트론칭을 실시해 게임성을 검증한 바 있다.
+        </p>
+
+        </div>
+
+  </div>
+
+    <script>
+        let f1=document.querySelector('.frame');
+        f1.firstChild.textContent='처음으로 추가된 텍스트';
+        f1.lastChild.textContent='마지막에 추가된 텍스트';
+        
+        let c1=document.querySelector('.c');
+        let h1=document.querySelector('.c h2');
+        //querySelector로 사용해 선택자를 사용할 때에 h2가 여러개 존재 할 경우를 상정해 
+        // 앞에 부모태그를 같이 사용하여 목적을 확실히 하기
+
+        h1.nextElementSibling.style.border='2px solid red'//'2px두께의' '실선' 'red'
+        // p태그 선택 -> h2 태그의 다음 형제노드
+
+        //이전의 형제 노드
+        //div class='c' 의 앞에 있는 형제노드 = h1 태그
+        c1.previousElementSibling.style.border='2px dotted blue'
+    </script>
+
+  
+</body>
+
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+<div class="frame">  
+    <p>one</p>
+    <p>two</p>
+</div>
+
+    <script>
+        let f1=document.getElementById("frame");
+
+        let first=f1.firstElementChild;
+
+        document.write(f1.firstChild);
+        document.write(first);
+
+       
+        //firstChild : 요소 노드중 첫번째 (텍스트,주석 포함)
+        //firstElementChild : 요소 노드 중 첫번째(텍스트,공백 무시)
+
+
+    </script>
+
+  
+</body>
+
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+<div class="frame">  
+    <h1>javascript</h1>
+    <div class="c">
+        <h2>css</h2>
+        <p>  
+        8일 국내 및 글로벌 시장에 론칭한 악마단 돌겨억은 출시 3일만인 지난 
+        11일 구글플레이 인기 게임 순위 1위에 기록한 데 이어 16일에는 애플 앱스토어에서도 1위를 차지했다. 
+        악마단 돌겨억은 지난 7일까지 싱가포르와 호주에 소프트론칭을 실시해 게임성을 검증한 바 있다.
+        </p>
+    </div>
+</div>
+
+    <script>
+
+        let f1=document.querySelector('.frame') //.frame 안에 요소는 2개
+
+        f1.firstElementChild.style.color='magenta'; // h1태그 안에 텍스트
+        f1.lastElementChild.style.color='blue' //div class c
+
+    </script>
+
+  
+</body>
+
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <form name="test">
+        <input type="text" name="test2">
+    </form>
+    
+
+    </div>
+    <script>
+               //document.폼네임.요소네임
+        let n=document.test.test2
+        n.style.border='2px solid red'
+
+        let n2=document.forms['test'].elements['test2'];
+        n2.style.backgroundColor='yellow'
+        
+        let n3=document.forms['test']['test2'];
+        n3.style.fontSize='50px'
+        
+    </script>
+
+
+  
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <form name="test">
+        <input type="text" name="test2">
+    </form>
+    <div id="div1"></div>
+    <script>
+        let n= document.test.test2 // input tag
+        let n2= document.getElementById('div1');
+
+        //n에 키보드를 입력했을 때 이벤트
+        //(고전이벤트 방식)
+        n.onkeyup=function(){
+        let n3 =n.value;
+           //this.value;
+    
+            //div 영역에 n3 띄우기
+            n2.textContent=n3;
+
+        }
+
+    </script>
+
+
+  
+</body>
+
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+   <form name="test" class="t">
+    <input type="text" name="first" value="001111" disabled>
+    <input type="text" name="second">
+
+    <!-- 일종의 묶는 작업(글자를 눌러도 입력)
+    input type 의 id 값과 label for 의 이름이 같으면 같이 인식 -->
+    <input type="radio" name="g1" id="male" disabled>
+    <label for="male">남</label> 
+
+    <input type="radio" name="g2" id="female" disabled>
+    <label for="female">여</label>
+
+   </form>
+    <script>
+
+        let n=document.test.second;
+        console.log(n);
+        let male=document.getElementById('male')
+        let female=document.getElementById('female')
+
+        n.onkeyup=function(){
+            //고전이벤트 방식
+            let num=this.value;
+            if(num >= 1 && num <= 4){
+                if(num==1 || num==3)
+                male.checked=true;
+                female.checked=false;
+            }
+            else{
+                male.checked=false;
+                female.checked=true;
+            }
+            
+        }
+
+    </script>
+
+
+  
+</body>
+
+</html>   
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <h1>정보입력</h1>
+    <form id="info">
+    <p>이름<input type="text" id="name"> </p>
+    <p>주소<input type="text" id="adr"> </p>
+    <input type="submit" value="정보입력">
+    </form> 
+    <p id="output"></p>
+
+</head>
+<body>
+   
+    <script>
+        let form=document.querySelector('#info');
+        let name=document.querySelector('#name');
+        let adr=document.querySelector('#adr');
+        let output=document.querySelector('#output');
+        
+        //submit 버튼을 눌렀을 때에 서버로 전송되는 이벤트 -> onsubmit 이벤트
+        form.onsubmit=function(e){
+            e.preventDefault();
+            //새로고침 방지하기 (기본 동작은 서브밋이 될 경우 다음 페이지로 넘어가야하는데 페이지가 없다)
+
+            let p=document.createElement('p'); //p태그 생성(동적 생성)
+            p.textContent = name.value + ',' + adr.value;
+            output.appendChild(p);
+
+
+
+        }
+
+        
+
+    </script>
+
+
+  
+</body>
+
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+   <form name="f">
+      <p>수 입력</p>
+      <input type="number" name="num" id="num" min="1" max="100" required>
+      <!-- <input type="text" minlength="2" maxlength="4" required> -->
+      <button type="button" id="ch">확인</button>
+   </form>
+   <div id="di"></div>
+
+   <script>
+   
+   //num, ch, di -> 태그객체 추출
+   let n1=document.getElementById("num");
+   //let n1=document.f.num;
+   let n2=document.getElementById("ch");
+   let n3=document.getElementById("di");
+
+   //확인버튼 클릭하면 -> addEventListener형식
+   n2.addEventListener('click',function(){
+      if(n1.checkValidity()){  //입력요소에 유효한 데이터면 true, 아니면 false
+         // "유효한 데이터" -> div영역에 띄우기
+         n3.innerHTML="유효한 데이터";
+      }
+      else{
+         n3.innerHTML=n1.validationMessage; //브라우저 기본 메시지
+      }
+   })
+
+
+
+
+
+
+
+   </script>
+
+
+</body>
+
+
+
+</html>
+
+
+
