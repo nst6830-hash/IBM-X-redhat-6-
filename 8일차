@@ -556,3 +556,165 @@
 </body>
 
 </html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+  <script>
+    let n=window.open("http://www.naver.com",'_blank','width=500,height=600');
+
+    //3초후 팝업 창 자동을 닫기
+
+    setTimeout(function(){
+        n.close();
+    },3000)
+  </script>
+</body>
+</html>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+  <script>
+    let n=window.open("",'','width=500,height=600');
+//화면 기준으로 왼쪽 200 상단 200 픽셀 떨어져서 위치
+    n.moveTo(300,300); //부모 창(window)의 절대 위치
+
+    n.resizeTo(400,400)
+    //1초마다 30픽셀씩  오른쪽 아래로 이동
+    setInterval(function(){
+        n.resizeBy(30,30);
+    },1000)
+
+    //브라우저 창은 항상 왼쪽 위 기준
+  </script>
+</body>
+</html>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+  <script>
+    let n=location.href;
+    document.write(n);
+
+    setTimeout(function(){
+        location.href='https://www.google.com'
+    },5000)
+    // setTimeout(function(){
+    // location.assign('https://www.google.com')
+    // },5000)
+    
+    
+    
+  </script>
+</body>
+</html>
+</html>
+
+
+//브라우저 자신의 주소를 알아낼 수 있고, 5초뒤 구글로 이동하는 코드를 사용할 수 있다.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    
+  <script>
+    //아래에 있는 p태그가 로드가 된 이후에 실행 onload
+   window.onload=function(){
+    let timer=document.getElementById("timer1");
+
+    setInterval(function(){
+        timer.textContent=new Date().toLocaleString()
+    }) //인터벌 값이 없을 경우 1초단위 1000
+   }
+  </script>
+  <p id="timer1"></p>
+</body>
+</html>
+</html>
+
+//window.onlaod를 이용할 수 있다.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    
+  <script>
+    //아래에 있는 p태그가 로드가 된 이후에 실행 onload
+   window.onload=function(){
+    let timer=document.getElementById("timer1");
+
+    setInterval(function(){
+        timer.textContent=new Date().toLocaleString()
+
+
+        //1초후 지우기
+        setTimeout(function(){
+            timer.textContent='';
+        },1000)
+    },2000) //2초 마다 보여주기
+   }//결론적으론 2초마다 반복(보여주기1초 빈화면 1초 = 2초)
+  </script>
+  <p id="timer1"></p>
+</body>
+</html>
+</html>
+
+//인터벌고 ㅏ셋타임아웃을 사용해서 반복해서 보여주는 화면을 만들 수 있다ㅣ.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <h1 id="head">JavaScript</h1>
+  <script>
+    //문서 객체 h1 선택
+    let n=document.getElementById('head');
+
+    //2.이벤트 메소드 
+    //addEventlistener
+    n.addEventListener('mouseover',mouse1);
+   
+
+    //배경색 pink
+    function mouse1(){
+        this.style.background='pink'
+    }
+    
+    n.addEventListener('mouseout',function(){
+        this.style.background='';
+    })
+
+    setTimeout(function(){
+        n.removeEventListener('mouseover',mouse1);
+    },5000)
+    
+    
+    
+
+  </script>
+  
+</body>
+</html>
+</html>
+
+
