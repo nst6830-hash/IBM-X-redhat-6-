@@ -86,3 +86,123 @@
 </html>
 </html>
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body><!-- 문제 3 -->
+    <h3>계산기</h3>
+<hr />
+<input type="text" value="0" id="dis" />
+<table>
+<tr><td><button onclick="clearf()">C</button></td><td><button onclick="re()">=</button></td></tr>
+<tr><td><button name="num" value="7" >7</button></td><td><button name="num" value="8">8</button></td><td><button name="num" value="9">9</button></td><td><button name="op" value="/">/</button></td></tr>
+<tr><td><button name="num" value="4">4</button></td><td><button name="num" value="5">5</button></td><td><button name="num" value="6">6</button></td><td><button name="op" value="*">*</button></td></tr>
+<tr><td><button name="num" value="1">1</button></td><td><button name="num" value="2">2</button></td><td><button name="num" value="3">3</button></td><td><button name="op" value="-">-</button></td></tr>
+<tr><td><button name="num" value="0">0</button></td><td><button name="op"value="+">+</button></td></tr>
+</table>
+   <script>
+    let num=document.getElementsByName('num')
+    let op=document.getElementsByName('op')
+    let dis=document.getElementById('dis')
+    let tot='';
+   
+    //let num=document.getElementsByName('num')
+    if(dis.value == '0'){
+        dis.value = '';
+    }
+    else{
+        dis.value += num.value
+    }
+    
+    //let op=document.getElementsByName('op')
+    //let tot='';
+    for(let i=0;i<num.length;i++){
+        op[i].onclick = function(){
+            tot +=op[i].value;
+            tot.value = '';
+        }
+        }
+    
+    function re(){
+        dis.value = eval(tot + dis.value)
+    }
+    function clearf(){
+        dis.value='0'
+        tot = ''
+    }
+
+    //let dis=document.getElementById('dis')
+    for(let i=0;i<num.length;i++){
+        num[i].onclick = function(){
+            tot.value+=num[i].value
+        }
+        }
+   </script>
+
+
+</body>
+
+</html>
+
+
+//강사님 풀이
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body><!-- 문제 3 -->
+    <h3>계산기</h3>
+<hr />
+<input type="text" value="0" id="dis" />
+<table>
+<tr><td><button onclick="clearf()">C</button></td><td><button onclick="re()">=</button></td></tr>
+<tr><td><button name="num" value="7" >7</button></td><td><button name="num" value="8">8</button></td><td><button name="num" value="9">9</button></td><td><button name="op" value="/">/</button></td></tr>
+<tr><td><button name="num" value="4">4</button></td><td><button name="num" value="5">5</button></td><td><button name="num" value="6">6</button></td><td><button name="op" value="*">*</button></td></tr>
+<tr><td><button name="num" value="1">1</button></td><td><button name="num" value="2">2</button></td><td><button name="num" value="3">3</button></td><td><button name="op" value="-">-</button></td></tr>
+<tr><td><button name="num" value="0">0</button></td><td><button name="op"value="+">+</button></td></tr>
+</table>
+   <script>
+    //숫자, 사칙연산 수식 ,input type 영역
+    let num1=document.getElementsByName('num');
+    let op1=document.getElementsByName('op');
+    let dis1=document.getElementById('dis');
+
+    let sik='';
+
+
+    //숫자 버튼 클릭시 이벤트 처리 작업
+    for(let i=0;i<num1.length;i++){
+        num1[i].addEventListener('click',function(){
+            //클릭한 정수 버튼 값을 정수로 
+            let value1=parseInt(this.value);//value 값 문자열
+            dis1.value=value1;
+            sik+=value1; //''+1
+        } )
+    }
+//연산자 버튼
+    for(let i=0;i<op1.length;i++){
+        op1[i].addEventListener('click',function(){
+            let n=this.innerHTML;
+            sik+=n; //sik=sik+n 문자열 누적하기
+        })
+    }
+
+    function re(){
+       dis1.value= eval(sik); //계산 함수
+    }
+
+    function clearf(){
+        sik='';
+        dis1.value=0;
+    }
+   </script>
+
+
+</body>
+
+
+
+</html>
+
