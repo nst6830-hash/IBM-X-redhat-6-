@@ -213,3 +213,156 @@
 
 //할일 목록을 직접 입력하며 체크박스 체크시 취소선 생성과 쓰레기통 아이콘을 이용한 목록 삭제 기능
 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+
+<script>
+    console.log('one');
+
+setTimeout(() => {
+  console.log('two');  // 5초 뒤 실행
+}, 5000);
+
+console.log('three');
+// -----------------------------
+// one
+// three
+// two
+
+</script>
+
+</body>
+
+
+</html>
+
+//동기식과 비동기식의 설명
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+
+<script>
+    function test(value) {
+        value(); //test2 함수 실행
+    }
+
+    function test2() {
+        console.log("test2");
+    }
+    test(test2); //test 함수는 test2()를 호출한다
+
+
+</script>
+
+</body>
+
+
+</html>
+
+    //콜백 함수? 상위의 작업을 먼저 완료 한 후에 다시 불러오는 함수
+    //test 함수 실행 → console.log (작업 중...)출력 → callback() 실행 
+    // → test2() 함수 실행 → console.log(작업 완료!) 출력
+    
+    // ****Js 에서 다른 함수의 매개 변수로 전달할 수 있고, 
+    // 전달된 함수를 나중에 호출할 수도 있다.
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+
+<script>
+    //동기 : 순서대로, 하나씩 처리하는 방식
+    //비동기 : 작업을 순서대로 처리하지 않음
+
+    // function test(){
+    //     setTimeout(function(){
+    //         console.log("hello");
+            
+    //     },3000);
+    // }
+    // test();
+    // console.log("hi")
+
+
+// setTimeout(()=>{let n=a+b;console.log(n);},2000)
+    // function add(a,b){
+    //     let n=a+b; 
+    //     setTimeout(function(){
+    //         console.log(n);           
+    //     },2000);
+    // }
+    // add(1,2);
+
+    function add(a,b,callback){
+        setTimeout(()=>{
+            let sum=a+b;
+            callback(sum);
+        },3000)
+    }
+
+    add(1,2,(num)=>{
+        console.log(num); 
+    })
+    // add(1,2,function num(){
+    //     console.log(num);      
+    // })
+    
+    
+    
+</script>
+
+</body>
+
+
+</html>
+
+
+//콜백 함수
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+
+<script>
+    //동기 : 순서대로, 하나씩 처리하는 방식
+    //비동기 : 작업을 순서대로 처리하지 않음
+
+    //고차 함수(함수를 매개변수로 받는 함수 / 함수를 리턴하는 함수)Higher-order Function
+    function cook(food,callback){
+        console.log(`${food}요리 시작한다`);
+
+        //2초후에 '${파스타}요리 끝' 출력 후 '먹어 ' 출력
+        setTimeout(()=>{
+            console.log(`${food}요리 끝`);
+            callback();
+        },2000)
+        
+    }
+    cook('파스타', ()=>{
+        console.log('먹어');
+    });
+
+
+</script>
+
+</body>
+
+//콜백 함수를 응용할 수 있음
+
+
