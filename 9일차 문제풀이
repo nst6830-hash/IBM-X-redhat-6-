@@ -121,3 +121,45 @@ ma.appendChild(rs);
 </html>
 
 //위 코드는 if문으로 풀어낸 문제를 for문과 lable로 묶어 간결화 하였다.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+    #click{
+        display: none;
+        border : 1px solid gray 
+    }
+    #btn2{
+        background-color: pink;
+    }
+</style>
+</head>
+<body>
+    <button onclick="on()">Open Modal</button>
+    <div id="click">
+        <h1>Modal</h1>
+        <p>자바스크립트 공부</p>
+        <button onclick="on2()" id="btn2">Close Modal</button>
+    </div>
+   <script>
+    function on(){
+        let a=document.getElementById('click')
+        a.style.display='block';
+    }
+    function on2(){
+        let a=document.getElementById('click')
+        a.style.display='none';
+    }
+   </script>
+
+</body>
+
+
+</html>
+
+
+//순서별로 해석해서 코드를 짜면 좀 더 쉽게 접근할 수 있다.
+//먼저 주어진 스타일에 맞추어서 화면에 도출되는 객체들을 만들어준다.
+//입력값을 주는 함수 또한 틀만 먼저 갖추어 두어도 코드 짜기 수월하다.
