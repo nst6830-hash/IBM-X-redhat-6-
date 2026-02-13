@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <h1 class="a1 a2" id="b1">javascript</h1>
+    <h2 class="a1 a2 a3">css</h2>
+
+   <script>
+    //classList
+    let n=document.querySelector('#b1');
+    console.log(n.classList.length); //해당 태그에 포함된 클래스 수를 출력 b1=h1
+
+    n.addEventListener('click', function(){
+        this.classList.add('active'); // 클래스 추가하기
+    })
+    n.addEventListener('mouseenter',function(){
+        this.classList.remove('active');
+    })
+    
+
+   </script>
+
+
+</body>
+</html>
+
+//클래스의 수를 출력하거나, 추가,제거 하기
+
+
