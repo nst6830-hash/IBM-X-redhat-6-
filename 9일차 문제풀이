@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+
+/* 체크박스를 클릭하면 할일에 취소선 만들기 */
+.checked{
+text-decoration: line-through;
+}
+</style>
+</head>
+<body>
+<div id = "main">
+<!-- label 5*3을 클릭해도 같이 클릭됨 -->
+<div>
+<label id = 'q1'>5*3</label><input type = "text" id = "ans1">
+</div>
+<div>
+<label id = 'q2'>1+2*3</label><input type = "text" id = "ans2">
+</div>
+<div>
+<label id = 'q3'>12*2</label><input type = "text" id = "ans3">
+</div>
+
+<button id ="submit" onclick = "cal()">결과<span id = 'result'></span></button>
+
+</div>
+<script>
+let q11 = document.getElementById("q1");
+let q12 = document.getElementById("q2");
+let q13 = document.getElementById("q3");
+
+let a1 = document.getElementById("ans1");
+let a2 = document.getElementById("ans2");
+let a3 = document.getElementById("ans3");
+
+let rs = document.getElementById("result");
+let ma = document.getElementById("main");
+
+res1 = eval(q11.innerText);
+res2 = eval(q12.innerText);
+res3 = eval(q13.innerText);
+
+function cal(){
+let cnt = 0;
+if(res1 == parseInt(a1.value)){
+cnt+=1;
+}
+else{
+q11.classList.toggle('checked');
+}
+
+if(res2 == parseInt(a2.value)){
+cnt+=1;
+}
+else{
+q12.classList.toggle('checked');
+}
+
+if(res3 == parseInt(a3.value)){
+cnt+=1;
+}
+else{
+q13.classList.toggle('checked');
+}
+
+rs.innerHTML = `맞은 개수 ${cnt}`;
+ma.appendChild(rs);
+}
+</script>
+</body>
+</html>
+
+
+//위 코드는 문제를 if 문을  사용해서 풀이한 코드
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+ <div>
+    <label id="q1">5*3</label><input type="text" id="a1">
+ </div>
+  <div>
+    <label id="q2">1+2*3</label><input type="text" id="a2">
+ </div>
+  <div>
+    <label id="q3">12*2</label><input type="text" id="a3">
+ </div>
+ <button onclick="cal()">결과</button>
+ <div id="count"></div>
+ 
+   <script>
+      function cal(){
+         let count=0; //맞은 개수
+
+         let label1=document.getElementsByTagName("label");
+         let input1=document.getElementsByTagName("input");
+
+         for(let i=0;i<label1.length;i++){
+            if(eval(label1[i].innerText) == input1[i].value){
+               count++; //맞은개수 1 더한다
+            }
+            else{
+               label1[i].style.textDecoration='line-through';
+            }
+         }
+         document.getElementById("count").innerText=`맞은 갯수: ${count}`;
+      }
+
+
+
+
+   </script>
+
+</body>
+
+
+</html>
+
+//위 코드는 if문으로 풀어낸 문제를 for문과 lable로 묶어 간결화 하였다.
