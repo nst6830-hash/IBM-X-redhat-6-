@@ -1,0 +1,74 @@
+#파이선 자료형
+# '''
+# int 정수
+# float 실수
+# complex 복소수
+# bool 불린
+# str 문자열 
+# list 리스트
+# tuple 튜플
+# set 집합
+# dict 사전 (딕셔너리)
+# '''
+
+# 데이터 타입 data type
+str1= "python" #문자열
+bool1 = True #논리 (불)
+float1= 10.4 #실수
+int1 = 3 #정수
+list1=[str1] #리스트
+dict1 = {"name":"gildong","id":3} #딕셔너리 (사전)
+tuple1=4,2,4 #튜플
+set1={1,23,4} #집합
+
+#데이터 타입 출력
+print(type(str1))   #<class 'str'>
+print(type(bool1))  #<class 'bool'>
+print(type(float1)) #<class 'float'>
+print(type(int1))   #<class 'int'>
+print(type(list1))  #<class 'list'>
+print(type(tuple1)) #<class 'tuple'>
+print(type(set1))   #<class 'set'>
+
+#Python은 모든 것이 객체. 속성값(변수),행동(함수)
+
+# 숫자형 연산자
+#'''+,-,*,/,//,%'''
+i1=30
+i2=944
+big_int1=12312434213424562134356234234524563
+big_int2=99999999999999999999999999999999999
+
+print(i1+i2)
+print(big_int1+big_int2)#메모리의 허용범위 안에서 무한대 사용가능 (정수 크기 제한X)
+
+print(3**4) #제곱
+
+f1=1.234
+f2=3.458
+print(f1+f2)
+print(f1-f2)
+print(f1*f2)
+print(f1/f2)
+
+a=3.
+b=10
+c=.5
+d=12.5
+print(type(a),type(b),type(c),type(d))
+#     실수     정수      실수      실수
+
+#정수 -> 실수
+print(float(b)) # 10 -> 10.0 
+#실수 -> 정수
+print(int(c)) # 0.5 -> 0
+#bool -> 정수
+print(int(True)) # 1 
+print(float(True)) # 1.0
+print(int(False)) # 0 
+print(float(False)) # 0.0
+
+#수치 함수
+print(abs(-42)) #절대값 함수 42
+print(pow(3,4)) #3**4 81 
+
