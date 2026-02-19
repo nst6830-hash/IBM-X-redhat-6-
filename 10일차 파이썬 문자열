@@ -1,0 +1,109 @@
+""" Escape 코드
+\n 개행
+\t 탭
+\\ 문자
+\'
+\"
+\000
+"""
+# 문자열 출력
+print('python welcome')
+print("python welcome")
+print("""python 
+      welcome""") # 여려 줄에 걸쳐 출력할 때 유용
+print('''python 
+      wel
+      come''') # 여러 줄에 걸쳐 출력할 때 유용
+
+print() #enter <br>
+print('enter')
+
+# type 결과는 클래스 객체로 뜸
+# 파이썬에서 모든 값은 객체, 객체는 어떤 클래스에서 만들어졌는지 정보를 가지고 있음
+
+
+# 문자열 슬라이싱
+str1="Python interesting"
+print(str1[0:3]) #Pyt
+print(str1[:])#Python interesting
+#Pyth 출력
+print(str1[:4])
+# index 4부터 끝까지
+print(str1[4:])#on interesting
+print(len(str1)) #18
+print(str1[:len(str1)])#Python interesting #인덱스 0부터 문자열의 길이 -1
+#인덱스 1부터 뒤에서 3번째 까지 출력 
+print(str1[1:-2])#ython interesti
+#뒤에서 4번째 부터 3번째 까지 출력
+print(str1[-4:-2])#ti
+#인덱스 1부터 3까지 2칸씩 건너뛰기
+print(str1[1:4:2])#yh 
+
+
+
+#format - c스타일
+#%s : 문자열
+#%f : 실수
+#%d : 정수
+a='I eat %d apples' %3
+print(a) #I eat 3 apples
+print("%s %s" %('one','two')) #one two
+print("숫자1%s 숫자2%s 있다" %('one','two')) #숫자1one 숫자2two 있다
+print("%d %d" %(3,4))#3 4
+print("%f"%(3.14))#3.140000 %f 는 소수 6자리 기준
+
+print("%s" %("hi"))
+print("%10s"%("hi"))#        hi =전체의 길이가 10칸이라는 공간에 오른쪽 정렬 하여 출력
+print("%-10s"%("hi"))#hi        =전체의 길이가 10칸이라는 공간에 왼쪽에 정렬 하여 출력
+
+a= "I eat {0} apples".format(3)
+print(a) #I eat 3 apples
+print("I eat {0} apples".format(3)) #I eat 3 apples
+#포맷 함수를 이용하면 %s%d%f 등을 생략하여 간결하게 사용할 수 있다.
+
+#정수 4,6을 입력 -> %d 사용
+print("%d %d"%(4,6))
+
+print("{0}".format('one'))#one
+#인덱스 번호를 생략 할 수도 있다.
+print("{} {}".format('one','two'))#one two
+#또 인덱스 번호에 따라 순서를 바꿀 수도 있다.
+print("{1} {0}".format('one','two'))#two one
+
+#정리하기
+print("%10s"%('Python'))#    Python
+print("{:>10}".format('Python'))#    Python
+
+
+print("%-10s"%('python'))#python
+print("%.5s"%('pythonjavascript'))#pytho
+
+print("%6.2f"%(3.1415921345689))#3.14
+
+x=30
+y=50
+z=42032
+
+str1="kim"
+ex1='%s %f %d'%(str1,z,(x+y))
+
+print("{0:<10}".format('hi'))#hi
+print("{0:>10}".format('hi'))#        hi
+print("{0:^10}".format('hi'))#    hi
+
+#20자리 "script" 출력 오른쪽 정렬
+#서식문자, 포맷
+
+print("{:>20}".format("script"))
+print("%20s"%('script'))
+
+#왼쪽 정렬 10자리로 바꾸기
+#서식문자, 포맷
+print("{:<10}".format("python"))
+print("%-10s"%('python'))
+
+#10자리 "python" 왼쪽 정렬 남은 자리 _ 삽입
+print("{:_<10}".format("python"))
+#10자리 "python" 가운데 정렬 남은 자리 _ 삽입
+print("{:_^10}".format("python"))
+#format 을 사용할 때에는 {} 꼭 사용 !
