@@ -1,0 +1,30 @@
+#2.
+#letters = ['a', 'b', 'c', 'd', 'e'] 
+# 에서 b부터 d까지 슬라이싱해서 출력해라.
+
+letters = ['a', 'b', 'c', 'd', 'e'] 
+print(letters[1 : 4])
+
+#items = ['zero', 'one', 'two', 'three', 'four', 'five'] 
+# 짝수 인덱스(0, 2, 4)의 요소만 추출 - ['zero', 'two', 'four'
+items = ['zero', 'one', 'two', 'three', 'four', 'five']
+print(items[::2])
+
+
+#3.
+#invite 리스트를 만들어 "찰스, 스누피, 루피"를 넣는다.
+#insert()를 써서 "둘리" 를 맨 앞에 추가해라.
+#append()를 써서 "토심이" 를 리스트 마지막에 추가해라.
+#리스트에 친구가 두명만 남을때까지 pop()을 써서 제거해라.
+
+invite = ['찰스','스누피','루피']
+invite.insert(0,'둘리')
+invite.append('토심이')
+
+invite.pop()
+invite.pop()
+invite.pop()
+
+print(invite)
+
+
