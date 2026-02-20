@@ -1,0 +1,24 @@
+"에릭" 이라는 이름을 변수에 저장하고 
+
+"안녕 에릭 좋은아침이네"
+
+c스타일, format함수, f-string으로 각각 작성해라
+
+name = '에릭'
+print('안녕 %s 좋은 아침이네'%(name))
+
+print('안녕 {0} 좋은 아침이네'.format(name))
+
+print(f'안녕 {name} 좋은 아침이네')
+
+
+"x = 3, y = 5"인 코드를 f-string, format, % 방식으로 작성해라.
+
+x=3
+y=5
+
+print('x=%d, y=%d'%(x,y))
+
+print('x={}, y={}'.format(x,y))
+
+print(f'x={x}, y={y}')
