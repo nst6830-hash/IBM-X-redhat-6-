@@ -1,0 +1,45 @@
+#f 문자열 포매팅 p.71
+
+name="홍길동"
+age = 30
+str1=f'내이름은 {name}이고 나이는 {age}살이다'
+print(str1) # 내이름은 홍길동이고 나이는 30살이다
+
+name2="홍길동"
+age2= 30
+str2='내이름은 {0}이고 나이는 {1}살이다'.format(name2,age2)
+print(str2) # 내이름은 홍길동이고 나이는 30살이다
+
+x=10
+y=30
+z='Lee'
+
+#C스타일 (서식문자)
+test1='z=%s, sum=%d' %(z,(x+y))
+print(test1) #z=Lee, sum=40
+
+
+# 포맷으로 바꾸기
+test2='z={z}, sum={sum}'.format(z=z,sum=x+y)
+print(test2) # z=Lee, sum=40
+
+
+# f 문자열 포매팅
+tset3=f'z={z}, sum={x+y}'
+print(tset3) # z=Lee, sum=40
+
+#정렬
+print(f"{'hello':>10}") #     hello 오른쪽 정렬
+print(f"{'hello':^10}") #  hello  가운데 정렬
+
+n=50
+print(f"{n:^10}") #    50     중앙 정렬
+
+#20개 자리수 왼쪽, 10개 자리수 오른쪽 정렬
+print(f"{n:<20}") #50
+print(f"{n:>10}") #        50
+
+#10개자리수 확보하고 n을 출력하는데 공백 - 로 채우기 (왼쪽 정렬로)
+
+print(f"{n:-<10}") # 50--------
+print(f"{n:#>20}") # ##################50
