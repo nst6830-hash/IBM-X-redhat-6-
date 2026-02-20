@@ -1,0 +1,19 @@
+
+        
+        function multi2(a,b){
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve(a * b) //resolve ? Promise 상태를 Pending에서 fulfilled로 변환
+                                   //reject  ? Promise 상태를 Pending에서 rejected 로 변환
+                }, 4000)
+            })
+        }
+        multi2(3,4).then( n => console.log(n))
+
+        //async 안에서만 await 사용 가능
+        async function run() { //run이라는 함수 명 설정
+            const n = await multi2(3,4); //promise 객체를 반환 받을 때 까지 기다린다.
+                                        // await 이 없으면 기다리지 않아서 pending 상태로 된다.
+            console.log(n);
+        }
+        run(); //함수 호출하기
