@@ -1,0 +1,62 @@
+
+    function multi(a,b){
+        setTimeout(()=>{
+            let mul = a*b;
+            console.log(mul);
+        },2000)
+    }
+    multi(3,4);
+    
+    //콜백 함수
+    function multi1(a,b,c){ //곱할 숫자 a,b 콜백함수 : c
+        setTimeout(()=>{ //비동기
+            let mul=a*b //return을 안쓰는 이유는 이미 함수가 끝난 뒤라 값을 반환받을 수 없음
+            c(mul);
+        },3000)
+    }
+
+    multi1(3,4,(n)=>{
+        console.log(n)
+    })
+
+        function multi2(a,b){
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve(a * b) //resolve ? Promise 상태를 Pending에서 fulfilled로 변환
+                                   //reject  ? Promise 상태를 Pending에서 rejected 로 변환
+                }, 4000)
+            })
+        }
+        multi2(3,4).then( n => console.log(n))
+
+        async function run() {
+            const n = await multi2(3,4);
+            console.log(n);
+        }
+        run();
+
+
+    function func1(){ //함수명 설정하기
+        return new Promise((resolve) =>{ //프로미스의 리턴값 받기 여기서 리턴값은 resolve : 성공
+            setTimeout(()=>{
+                resolve('hi') //호출하여 'hi' 
+            },3000)
+        })
+    }
+    func1().then((msg)=>{
+        console.log(msg);
+        
+    })
+
+
+    function func2(c){ //콜백 함수로 짜보기
+            setTimeout(()=>{ //3초후에 행동하라
+                c('hi') //콜백함수 c('hi') 호출해라
+            },4000)
+        }
+        func2((msg)=>{
+            console.log(msg);
+            
+        })
+    
+
