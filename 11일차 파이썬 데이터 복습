@@ -1,0 +1,117 @@
+#파이선 자료형
+
+# '''
+# int 정수
+# float 실수
+# complex 복소수
+# bool 불린
+# str 문자열 
+# list 리스트
+# tuple 튜플
+# set 집합
+# dict 사전 (딕셔너리)
+# '''
+
+str1 = "Python"
+str2 = 'How are you?'
+str3 = """Thank you"""
+str4 = '''Nice to meet you'''
+
+# 타입 출력
+
+print(type(str1))
+print(type(str2))
+print(type(str3))
+print(type(str4))
+# class 'str'
+
+print(len(str1)) # 6
+print(len(str2)) # 12
+print(len(str3)) # 9
+print(len(str4)) # 16
+
+str5=''
+print(type(str5),len(str5)) # class 'str' 0
+
+str6=str() #str5=''
+
+print(type(str6), len(str6)) # class 'str' 0
+
+int1=int(5.6) #5.6 을 소수점을 제외한 정수로 변환 (소수점은 버려짐)
+print(int1) # 5
+
+float1=float(4) # 실수 형태로 변환
+print(float1) # 4.0
+
+ex_str1="do you have a \"phone\"?" # 교재 52p.
+print(ex_str1) # do you have a "phone"?
+
+ex_str2="do you have a \'phone\'?" # 교재 52p.
+print(ex_str2) # do you have a 'phone'?
+
+t_str1="Py\t thon"
+print(t_str1) # Py       thon
+
+t_str2="New line\t Python"
+print(t_str2) # New line         Python
+
+#문자열 연산 p.55 
+str_1="Apple"
+str_2="Banana"
+str_3="Cherry"
+str_4="Mango"
+
+
+print(3*str_1) # AppleAppleApple
+print(str_1 + str_2) # AppleBanana
+
+print('p' in str_1) #True
+print('c' in str_3) #False
+print('A' not in str_4) #True
+
+# 문자열 형변환
+
+print(type(str(33))) # 정수형 객체를 문자열 객체로 변환 데이터 자료형 출력 <class 'str'>
+print(str(3.4)) # 3.4 ( type 은 <class 'str'>)
+print(str(True)) # True (type 은 <class 'str'>)
+
+#format 
+# %d 
+# %s 
+# %f 
+# %c
+print("%s %s"%('first','second')) # first second
+print("{0} {1}".format('first','second')) # first second 0은 생략 가능
+
+print("%10s" %('Python')) # 오른쪽 정렬     Python
+print("{0:>10}".format('Python'))# 오른쪽 정렬     Python
+
+print("%-10s"%('Python')) # 왼쪽 정렬Python
+print("{0:<10}".format('Python')) # 왼쪽 정렬Python
+
+#10글자에 Python * 포함해 왼쪽으로 정렬
+print("{0:*<10}".format('Python')) # Python**** 
+print("{0:*^10}".format('Python')) # **Python**
+
+# 슬라이싱 (절삭)
+print('%.3s'%('PythonJava')) # Pyt
+print("{:.3}".format('PythonJava')) # Pyt
+print("{:*>10.3}".format('PythonJava')) # 10칸을 만들어서 그중 3자리만 출력하기 (*을 채워 확인해보자)
+#*******Pyt 
+
+print("%d %d %d"%(2,3,4)) # 2 3 4
+# 4자리수에서 12 출력 %
+print("%4d" %(12))#  12
+print("{0:4}".format(12)) #  12
+
+print('%f'%(3.141568524)) # 3.141569 6자리까지만 출력
+print('%3d'%(3151697455)) # 3151697455 최소 공간을 3 자리 확보하라는 뜻 (길이 제한 X)
+
+print('%10s'%('PythonJava')) #PythonJava
+print('%3s'%('PythonJava')) #PythonJava 3자리를 확보해서 출력해라 (길이 제한 X)
+print('%20s'%('PythonJava')) #           PythonJava 20자리를 확보하고 10자리 문자열을 출력해서 공간이 남음
+
+print("%4.2f" %(3.2535457585)) #3.25
+print("%10.2f" %(3.2535457585)) #      3.25
+
+
