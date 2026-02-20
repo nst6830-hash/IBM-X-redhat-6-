@@ -1,0 +1,84 @@
+#딕셔너리 dict {key : value}
+#순서 없음, 키값 중복 불가,수정 가능,삭제 가능
+
+dic1={'name':'Lee','phone':'010-1234-5678','birth':'000212'}
+dic2={0:'python'}
+dic3={'ary': [1,2,3,4]}
+dic4={
+    'name':'tom',
+    'addr':'suwon',
+    'age':'22',
+    'grade':'A',
+    'status':True
+}
+dic5=dict()
+dic6=dict([('name','tom'),('addr','suwon'),('age','22'),('grade','A'),('status',True)])
+
+#가장 안쪽 구조 : tuple
+#안쪽을 감싸는 구조 : list(여러개의 tuple을 하나로 묶음 -> 튜플의 리스트)
+#가장 바깥쪽 구조 : dictionary 구조로 변환하기
+
+#(키,값)튜플 -> 튜플들의 리스트 -> dict 사용 -> 딕셔너리 {키:값}
+print(dic6) #{'name': 'tom', 'addr': 'suwon', 'age': '22', 'grade': 'A', 'status': True}
+
+#dict() 함수는 인자를 1개만 받는 구조!
+print(type(dic1),type(dic2),type(dic3),type(dic4),type(dic5),type(dic6))
+
+#p.96
+#딕셔너리명['키명']
+#key를 이용해 Value 추출
+print(dic1['name']) #키 값이 있으면 출력,없으면 Keyerror
+print(dic1.get('name')) # get 함수에 키 값이 없으면 none
+
+print(dic2[0]) #키 값 python
+print(dic2.get(0)) # python
+
+print(dic3['ary']) # [1, 2, 3, 4]
+print(dic3.get('ary')) # [1, 2, 3, 4]
+
+print(dic4['age']) # 22
+print(dic4.get('age')) # 22
+
+a={1:'c',1:'d',1:'c',1:'d'}
+print(a) #키값이 중복될 경우 마지막 값이 출력 (기존의 값 덮어쓰기)
+
+#딕셔너리 값 추가
+#dic1={'name':'Lee','phone':'010-1234-5678','birth':'000212'}
+
+dic1['adress']='yongsan'
+print(dic1)# {'name': 'Lee', 'phone': '010-1234-5678', 'birth': '000212', 'adress': 'yongsan'}
+dic1['score']={90,30,40}
+print(dic1) #{'name': 'Lee', 'phone': '010-1234-5678', 
+            #'birth': '000212', 'adress': 'yongsan', 'score': {40, 90, 30}}
+print(len(dic1),len(dic2),len(dic3),len(dic4))  # 5 1 1 5
+
+#딕셔너리 함수들
+print(dic1.keys()) # 키들의 집함 dict_keys(['name', 'phone', 'birth', 'adress', 'score'])
+print(dic2.keys()) #dict_keys([0])
+
+print(list(dic1.keys()))
+# ['name', 'phone', 'birth', 'adress', 'score'] 리스트로 형을 바꿧기 때문에 리스트로 출력
+
+#dic3도 list로 출력하기
+print(list(dic3.keys())) # ['ary']
+
+#values 값들의 집합
+print(dic1.values()) #dict_values(['Lee', '010-1234-5678', '000212', 'yongsan', {40, 90, 30}])
+print(list(dic1.values())) #['Lee', '010-1234-5678', '000212', 'yongsan', {40, 90, 30}]
+
+#items 키, 값 모두 출력
+print(dic3.items()) #dict_items([('ary', [1, 2, 3, 4])])
+print(list(dic3.items())) #[('ary', [1, 2, 3, 4])]
+
+#pop 키,값 모두 삭제 
+print(dic1.pop('name')) #키 값을 넣어서 삭제 -> 값도 함께 삭제 됨 
+print(dic1) 
+#{'phone': '010-1234-5678', 'birth': '000212', 'adress': 'yongsan', 'score': {40, 90, 30}}
+print(dic4.pop('addr'))
+print(dic4) #{'name': 'tom', 'age': '22', 'grade': 'A', 'status': True}
+
+#dic1에 'name' 키 속성 있는지 확인
+# p.101
+print('name' in dic1) # false
+
+
